@@ -1,0 +1,77 @@
+id,type_id,sub_category,Categorie,nom,Adresse,Code_postale,Ville,lat,lon,Usage_principale,date_de_construction,nombre_de_batiments,nombre_de_niveaux,Surface totale (m?),Compacite,Periode_d_occupation_des_locaux,hauteur_sous_plafond_moyenne,Zone_climatique (RT_2005),Temp_exterieure_de_base_(?C),orientation_principale,Surface_totale (m?),D?tail_des_surfaces,Chauffage,ecs,renouvellement_d_air,Remarques,plan,image,cons_gaz,cons_gas_link,cons_elec,cons_elec_link,cons_eau,cons_eau_link,cons_eau_chaude,cons_eau_chaude_link,dpec,maintenance
+1,1,1,Mat et Elem,Groupe Scolaire HenriI ARNOULD , 5 rue Leon Lemaire,2100,Saint-Quentin,49.83516264,3.317452669,,,,,,,,,H1a,-7,,,,,,,,,,,,,,,,,,,
+2,1,1,Mat et Elem,Groupe Scolaire Quentin BARRE,Impasse Jacquard  et 59 rue Quentin Barr?,2100,Saint-Quentin,49.8486184,3.298704028,,,,,,,,,H1a,-7,,,,,,,,,,,,,,,,,,,
+3,1,1,Mat et Elem,Groupe Scolaire PAUL BERT ,66 rue du Fleming,2100,Saint-Quentin,49.86296777,3.305342495,,,,,,,,,H1a,-7,,,,,,,,,,,,,,,,,,,
+4,1,1,Mat et Elem,Groupe Scolaire FRAN?OIS COLLERY ,88 rue Henry Dunant,2100,Saint-Quentin,49.85433756,3.305114508,,,,,,,,,H1a,-7,,,,,,,,,,,,,,,,,,,
+5,1,1,Mat et Elem,Groupe Scolaire CORRETTE ,39 rue Briatte ,2100,Saint-Quentin,49.83278038,3.308386803,,,,,,,,,H1a,-7,,,,,,,,,,,,,,,,,,,
+6,1,1,Mat et Elem,Groupe Scolaire CAMILLE DESMOULINS ,2 rue Louise Hugues et 109 rue Camille Desmoulins,2100,Saint-Quentin,49.85425456,3.295085728,,,,,,,,,H1a,-7,,,,,,,,,,,,,,,,,,,
+7,1,1,Mat et Elem,Groupe Scolaire LES GIRONDINS ,Place des Girondins - 40 rue des Girondins,2100,Saint-Quentin,49.83824021,3.307804763,"Ecole primaire et ?lementaire
+",1921,9,"3 (Sous-sol,RDC et ?tage)
+",3061 m?,"Ecole maternelle: 120 enfants et 5 enseignants
+Ecole primaire: 291 ?l?ves",NC,"RDC: 2,9 m",H1a,-7,"Ecole ?l?mentaire filles: Sud Est
+Ecole ?l?mentaire Gar?ons: Nord Ouest
+Ecole ?l?mentaire: Ouest",3061 m?,,Chauffage au gaz,"Ballons ?lectriques d?centralis?s
+","Ventilation naturelle par infiltration
+",,,,,,,,,,,,,
+8,1,1,Mat et Elem,"Groupe Scolaire d'Isle, Ecole  POLVENT ",1 rue d'Ostende,2100,Saint-Quentin,49.83884912,3.298915923,,,,,,,,,H1a,-7,,,,,,,,,,,,,,,,,,,
+9,1,1,Mat et Elem,Groupe Scolaire Pierre LAROCHE ,2 rue Andr? Godin,2100,Saint-Quentin,49.8622364,3.298060298,"Ecole maternelle et primaire, Gymnase et logements
+",1965,"3 (maternelle, primaire et gymnase)","Maternelle: 1 (RDC)
+Primaire: 4 (RDC, R+1, R+2, et R+3)
+Gymnase: 1 (RDC)",6141 m?,NC,NC,"Maternelle: RDC: 3,40 m
+Primaire: RDC, R+1, R+2: 3,40 m ; R+3: NC
+Gymnase: RDC: 14m",H1a,-7,"Maternelle: Nord / Ouest
+Primaire: Sud / Ouest
+Gymnase: Sud / Ouest",6141 m?,,"Chauffage urbain / sous station
+ dans le bütiment maternelle","Maternelle et primaire: Electrique
+Gymnase: Centralis?e en chauffage urbain","Maternelle: Ventilation naturelle par infiltraation
+Primaire: Ventilation naturelle par infiltration dans les salles de classe, et ventilation sp?cifique pour la zone de cuisine avec 2 hottes d'extration
+Gymnase: Pas de ventilation dans les vestiaires, et deux a?rothermes avec caissons d'air neuf et d'air m?lang? dans la grande salle de sport","Le gymnase ? ?t? r?habillit? r?cemment
+Les 7 logements faisant initialement partidu groupe scolaire ne font plus partie de ce dernier, ils ne sont plus g?r?s par la Ville.",,,,,,,,,,,,
+10,1,1,Mat et Elem,Groupe Scolaire METZ ,2 rue de Metz,2100,Saint-Quentin,49.84921162,3.290957808,"Ecole maternelle et primaire
+",1954,1,3,1253 m?,0.35,de 7h45 ? 18h00,"3,2 m",H1a,-7,Nord / Sud,1253,,"Chaufferie gaz
+plancher chauffant",Electrique,"Ventilation naturelle par infiltration
+extracteur dans la pi?ce d'eau","Le bütiment est rattach? au coll?ge, appartenant au conseil r?gional, qui approvisionne l??cole primaire/maternelle en
+chaleur.
+L??cole a ?t? r?nov?e en 2002 : remplacement des fen?tres, mise en place de rideau, ind?pendance ?lectrique
+(compteur bleu).",,,,,,,,,,,,
+11,1,1,Mat et Elem,Groupe Scolaire Marcel PAGNOL ,127 rue du G?n?ral Leclerc,2100,Saint-Quentin,49.83832497,3.302746117,,,,,,,,,H1a,-7,,,,,,,,,,,,,,,,,,,
+12,1,1,Mat et Elem,Groupe Scolaire Robert SCHUMAN ,Rue Berthollet,2100,Saint-Quentin,49.85955634,3.295260072,Etablissement scolaire,NC,3,1 ? 4,3578 m?,1.86,,"RDC (logements): 3 m
+RDC (autres bütiments): 3,3 m
+R+1: 2,6 m
+R+2: 2,6 m
+R+3: 2,5 m",H1a,-7,Est/Ouest,3578,,R?seau Urbain,"R?seau urbain + ballons ECS 
+?lectriques d?centralis?s","Ventilation naturelle par infiltration
+ et ventilation m?canique","Le groupe se divise en trois structures :
+La maternelle et les logements
+L??cole ?l?mentaire 
+Le gymnase",,,,,,,,,,,,
+13,1,2,Maternelle,Groupe Scolaire XAVIER AUBRYET ,10 rue Xavier AUBRYET,2100,Saint-Quentin,49.84194029,3.274043798,,,,,,,,,H1a,-7,,,,,,,,,,,,,,,,,,,
+14,1,1,Mat et Elem,Groupe Scolaire Georges BACHY ,146 Rue d'êpargnemailles,2100,Saint-Quentin,49.85243183,3.272858262,,,,,,,,,H1a,-7,,,,,,,,,,,,,,,,,,,
+15,1,1,Mat et Elem,Groupe Scolaire Ferdinand BUISSON ,80 Rue Henriette Cabot  et 82 Rue Henriette Cabot  ,2100,Saint-Quentin,49.86134076,3.272359371,,,,,,,,,H1a,-7,,,,,,,,,,,,,,,,,,,
+16,1,1,Mat et Elem,Groupe Scolaire Alfred CLIN ,99 Rue de la Claie,2100,Saint-Quentin,49.85645419,3.287315369,"Ecole primaire et maternelle
+",1912,2,"3 (Sous-Sol: Chaufferies et restaurant, RDC: Ecole, Etage: Ecole)
+",2075 m?,"Ecole maternelle: 91 ?l?ves et 4 enseignants
+Ecole ?lementaire 143 ?l?ves et 9 enseignants",NC,"Sous-sol: 2,5m
+RDC: 2,8m
+R+1: 2,8m",H1a,-7,Entr?e fa?ade Sud,2075 m?,,"Chauffage au gaz
+","Ballons ?lectriques d?centralis?s
+","Ventilation naturelle par infiltration
+","Restauration en 1921
+",,,,,,,,,,,,
+17,1,1,Mat et Elem,Groupe Scolaire Ernest LAVISSE ,218 route de Paris,2100,Saint-Quentin,49.83672999,3.265975714,,,,,,,,,H1a,-7,,,,,,,,,,,,,,,,,,,
+18,1,1,Mat et Elem,Groupe Scolaire Lyon JUMENTIER,3 Rue des Glatiniers,2100,Saint-Quentin,49.84561068,3.284826279,,,,,,,,,H1a,-7,,,,,,,,,,,,,,,,,,,
+19,1,1,Mat et Elem,Groupe Scolaire Jean MACE ,Rue du Commandant Charcot ,2100,Saint-Quentin,49.84628869,3.266630173,,,,,,,,,H1a,-7,,,,,,,,,,,,,,,,,,,
+20,1,2,Maternelle,Groupe Scolaire MONTPLAISIR,53 rue de la 3?me D.I.M,2100,Saint-Quentin,49.85091514,3.275696039,,,,,,,,,H1a,-7,,,,,,,,,,,,,,,,,,,
+21,1,2,Maternelle,Groupe Scolaire MONTESSORI,1 rue Fran?ois Adrien Boieldieu,2100,Saint-Quentin,49.85284688,3.269489408,,,,,,,,,H1a,-7,,,,,,,,,,,,,,,,,,,
+22,1,3,El?mentaire,Groupe Scolaire AMEDEE OZENFANT,61 rue des Patriotes,2100,Saint-Quentin,49.84287089,3.290448189,,,,,,,,,H1a,-7,,,,,,,,,,,,,,,,,,,
+23,1,3,El?mentaire,Groupe Scolaire PARINGAULT,1 rue de la 3?me D.I.M,2100,Saint-Quentin,49.84875503,3.276940584,,,,,,,,,H1a,-7,,,,,,,,,,,,,,,,,,,
+24,1,2,Maternelle,Groupe Scolaire des PATRIOTES,38 bis et 40 rue des Patriotes,2100,Saint-Quentin,49.84382655,3.288887143,,,,,,,,,H1a,-7,,,,,,,,,,,,,,,,,,,
+25,1,1,Mat et Elem,Groupe Scolaire Jacques PREVERT,Rue de l'Eglise (Oestres),2100,Saint-Quentin,49.82885813,3.257902265,,,,,,,,,H1a,-7,,,,,,,,,,,,,,,,,,,
+26,1,3,El?mentaire,Groupe Scolaire THELLIER DESJARDINS,1 rue de Flandre ,2100,Saint-Quentin,49.84070523,3.274092078,,,,,,,,,H1a,-7,,,,,,,,,,,,,,,,,,,
+27,1,3,El?mentaire,Groupe Scolaire DAVID et MAIGRET ,106 rue de Normandie,2100,Saint-Quentin,49.85619048,3.271028996,,,,,,,,,H1a,-7,,,,,,,,,,,,,,,,,,,
+28,1,4,Dessin,Groupe Scolaire Maurice-Quentin de la TOUR,1 rue Gabriel Girodon,2100,Saint-Quentin,,,,,,,,,,,H1a,-7,,,,,,,,,,,,,,,,,,,
+29,1,2,Maternelle,Groupe Scolaire Benjamin Rouche,284 rue Jacques Blanchot,2100,Saint-Quentin,49.85619135,3.271028996,,,,,,,,,H1a,-7,,,,,,,,,,,,,,,,,,,
+30,1,2,Maternelle,Groupe Scolaire Pauline KERGOMARD,Rue Charles Gomard,2100,Saint-Quentin,49.85438598,3.278622329,,,,,,,,,H1a,-7,,,,,,,,,,,,,,,,,,,
+31,1,5,Musique,Ecole nationale de Musique - Conservatoire,51 rue d'Isle,2100,Saint-Quentin,49.84444836,3.291486204,,,,,,,,,H1a,-7,,,,,,,,,,,,,,,,,,,
+32,,,Spectacle,La Manufacture,8 rue Paul Codos,2100,Saint-Quentin,49.85443095,3.270347714,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+33,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

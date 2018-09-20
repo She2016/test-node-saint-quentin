@@ -1,0 +1,173 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    title= title
+    meta(name='description' content='Sufee Admin - HTML5 Admin Template')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='apple-touch-icon' href='apple-icon.png')
+    link(rel='shortcut icon' href='favicon.ico')
+    link(rel='stylesheet' href='/assets/css/normalize.css')
+    link(rel='stylesheet' href='/assets/css/bootstrap.min.css')
+    link(rel='stylesheet' href='/assets/css/font-awesome.min.css')
+    link(rel='stylesheet' href='/assets/css/themify-icons.css')
+    link(rel='stylesheet' href='/assets/css/flag-icon.min.css')
+    link(rel='stylesheet' href='/assets/css/cs-skin-elastic.css')
+    link(rel='stylesheet' href='/assets/scss/style.css')
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css') 
+    link(rel='stylesheet' href='https://unpkg.com/leaflet@1.3.1/dist/leaflet.css')
+    script(src='https://unpkg.com/leaflet@1.3.1/dist/leaflet.js')
+    script(src='/assets/js/vendor/jquery-2.1.4.min.js')
+    script(src='/assets/js/jquery-form-validator.min.js')
+    script(src='/assets/js/popper.min.js')
+    script(src='/assets/js/plugins.js')
+    script(src='/assets/js/main.js')
+
+  body
+    // Left Panel
+    aside#left-panel.left-panel
+      nav.navbar.navbar-expand-sm.navbar-default
+        .navbar-header
+          button.navbar-toggler(type='button' data-toggle='collapse' data-target='#main-menu' aria-controls='main-menu' aria-expanded='false' aria-label='Toggle navigation')
+            i.fa.fa-bars
+          a.navbar-brand(href='./')
+            |Saint-Quentin
+          a.navbar-brand.hidden(href='./')
+            img(src='/images/logo2.png' alt='Logo')
+        #main-menu.main-menu.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li
+              a(href='index.html')
+                i.menu-icon.fa.fa-dashboard
+                | Dashboard
+            h3.menu-title Elements
+            // /.menu-title
+            li.menu-item-has-children.dropdown
+              a.dropdown-toggle(href='#' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                i.menu-icon.fa.fa-laptop
+                | Buildings
+              ul.sub-menu.children.dropdown-menu
+                li
+                  i.fa.fa-puzzle-piece
+                  a(href='/buildings') All Buildings
+                li
+                  i.fa.fa-id-badge
+                  a(href='/create') Create a building
+            li.menu-item-has-children.dropdown
+              a.dropdown-toggle(href='#' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                i.menu-icon.fa.fa-table
+                | Building Types
+              ul.sub-menu.children.dropdown-menu
+                li
+                  i.fa.fa-table
+                  a(href='/types') All types
+                li
+                  i.fa.fa-table
+                  a(href='/createType') Create a type
+            li.menu-item-has-children.active.dropdown
+              a.dropdown-toggle(href='#' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                i.menu-icon.fa.fa-th
+                | Forms
+              ul.sub-menu.children.dropdown-menu
+                li
+                  i.menu-icon.fa.fa-th
+                  a(href='forms-basic.html') Basic Form
+                li
+                  i.menu-icon.fa.fa-th
+                  a(href='forms-advanced.html') Advanced Form
+                  // /.navbar-collapse
+              // /#left-panel
+              // Left Panel
+              // Right Panel
+    #right-panel.right-panel
+      // Header
+      header#header.header
+        .header-menu
+          .col-sm-7
+            a#menuToggle.menutoggle.pull-left
+              i.fa.fa.fa-tasks
+            .header-left
+              button.search-trigger
+                i.fa.fa-search
+              .form-inline
+                form.search-form
+                  input.form-control.mr-sm-2(type='text' placeholder='Search ...' aria-label='Search')
+                  button.search-close(type='submit')
+                    i.fa.fa-close
+              .dropdown.for-notification
+                button#notification.btn.btn-secondary.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                  i.fa.fa-bell
+                  span.count.bg-danger 5
+                .dropdown-menu(aria-labelledby='notification')
+                  p.red You have 3 Notification
+                  a.dropdown-item.media.bg-flat-color-1(href='#')
+                    i.fa.fa-check
+                    p Server #1 overloaded.
+                  a.dropdown-item.media.bg-flat-color-4(href='#')
+                    i.fa.fa-info
+                    p Server #2 overloaded.
+                  a.dropdown-item.media.bg-flat-color-5(href='#')
+                    i.fa.fa-warning
+                    p Server #3 overloaded.
+              .dropdown.for-message
+                button#message.btn.btn-secondary.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                  i.ti-email
+                  span.count.bg-primary 9
+                .dropdown-menu(aria-labelledby='message')
+                  p.red You have 4 Mails
+                  a.dropdown-item.media.bg-flat-color-1(href='#')
+                    span.photo.media-left
+                      img(alt='avatar' src='/images/avatar/1.jpg')
+                    span.message.media-body
+                      span.name.float-left Jonathan Smith
+                      span.time.float-right Just now
+                      p Hello, this is an example msg
+          .col-sm-5
+            .user-area.dropdown.float-right
+              a.dropdown-toggle(href='#' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                img.user-avatar.rounded-circle(src='/images/admin.jpg' alt='User Avatar')
+              .user-menu.dropdown-menu
+                a.nav-link(href='#')
+                  i.fa.fa-.user
+                  | My Profile
+                a.nav-link(href='#')
+                  i.fa.fa-.user
+                  | Notifications 
+                  span.count 13
+                a.nav-link(href='#')
+                  i.fa.fa.-cog
+                  | Settings
+                a.nav-link(href='#')
+                  i.fa.fa-power.-off
+                  | Logout
+            #language-select.language-select.dropdown
+              a#language.dropdown-toggle(href='#' data-toggle='dropdown' aria-haspopup='true' aria-expanded='true')
+                i.flag-icon.flag-icon-us
+              .dropdown-menu(aria-labelledby='language')
+                .dropdown-item
+                  span.flag-icon.flag-icon-fr
+                .dropdown-item
+                  i.flag-icon.flag-icon-es
+                .dropdown-item
+                  i.flag-icon.flag-icon-us
+                .dropdown-item
+                  i.flag-icon.flag-icon-it
+              // /header
+              // Header
+      .breadcrumbs
+        .col-sm-4
+          .page-header.float-left
+            .page-title
+              h1 Dashboard
+        .col-sm-8
+          .page-header.float-right
+            .page-title
+              ol.breadcrumb.text-right
+                li
+                  a(href='#') Dashboard
+                li
+                  a(href='#') Forms
+                li.active Basic
+
+      block content
