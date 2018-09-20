@@ -9,7 +9,7 @@ var pgp = require('pg-promise')(options);
 // Setup connection
 var username = "postgres" // sandbox username
 var password = "1234" // read only privileges on our table
-var host = "localhost:5433"
+var host = "ancient-tundra-95051:5433"
 var database = "saint_quntin" // database name
 var connectionString = "postgres://" + username + ":" + password + "@" + host + "/" + database; // Your Database Connection
 var db = pgp(connectionString);
