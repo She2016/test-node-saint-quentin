@@ -1,21 +1,50 @@
-extends layout
+extends layoutt
 block content
-    form(action='/filter')
-        select(name='name')
-            option(disabled='', selected='', value='') Select One...
-            option(value='Starbucks') Starbucks
-            option(value='1369 Coffee House') 1369 Coffee House
-        input(type='submit', value='Submit')
     #map
     script.
         var myData = !{JSON.stringify(jsonData)};
         // Create variable to hold map element, give initial settings to map
-        var map = L.map('map',{ center: [49.85061, 3.27555], zoom: 14});
+        var map = L.map('map', {
+        	center: [49.846921, 3.287297],
+        	zoom: 14
+        });
         // Add OpenStreetMap tile layer to map element
-        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
-        // Add JSON to map
-        L.geoJson(myData,{
-            onEachFeature: function (feature, layer) {
-                layer.bindPopup(feature.properties.f2);
-            }
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        	attribution: '© OpenStreetMap'
         }).addTo(map);
+        var myStyle = {
+        	radius: 10,
+        	fillColor: "#ff7800",
+        	color: "#000",
+        	weight: 1,
+        	opacity: 1,
+        	fillOpacity: 0.8
+        };
+        // Add JSON to map
+        L.geoJson(myData, {
+        	pointToLayer: function (feature, latlng) {
+        		return L.circleMarker(latlng, myStyle)
+        	},
+        	onEachFeature: function (feature, layer) {
+        			layer.bindTooltip(feature.properties.f2.toString());
+        		//bind click
+        		layer.on({
+        			click: whenClicked
+        		});
+        	}
+        }).addTo(map);
+
+
+        function whenClicked(e) {
+        	var customPopup = "<h5 class='card-title'>" +
+        		e.target.feature.properties.nom + "</h5>";
+        	for (key in e.target.feature.properties) {
+        		if (key == "url") {
+        			customPopup += "<div> <b>" + capitalizeFirstLetter(key) + ":  </b><a target='_blank' href='" + e.target.feature.properties[key] + "'>See the 3D Model</a></div>";
+        		} else {
+        			customPopup += "<div> <b>" + capitalizeFirstLetter(key) + ":</b> " + e.target.feature.properties[key] + "</div>";
+        		}
+        	}
+        	customPopup += "</div></div>";
+        	$("#information1").html(customPopup);
+        }

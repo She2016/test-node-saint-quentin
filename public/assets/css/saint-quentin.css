@@ -1,0 +1,210 @@
+img.center {
+    width: 50%;
+    padding-top: 5%;
+    display:block;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+.ajax-loader {
+    display: none;
+    background-color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    z-index: +100 !important;
+    width: 100%;
+    height: 50%;
+}
+
+.ajax-loader img {
+    position: relative;
+    top: 50%;
+    left: 25%;
+}
+
+.smal {
+    font-size: 40% !important;
+}
+
+.values {
+    font-size: 3em;
+    padding-top: 8%;
+    text-align: center;
+}
+.temp {
+
+    color: #fd954e;
+}
+
+.hum {
+    color: #8ec6ad;
+}
+.co2 {
+    color: #7dbe00;
+}
+
+#map-container {
+    width: 100%;
+    position: relative;
+}
+
+#legend {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+}
+
+#legend table {
+    width: 100%;
+    height: 100%;
+}
+
+#legend .right {
+    height: 25%;
+    width: 80%;
+    font-weight: bold;
+}
+
+#legend .left {
+    height: 25%;
+    width: 20%;
+}
+
+#legend td .poin {
+    width: 75%;
+    height: 70%;
+    border-radius: 15px;
+}
+
+#map-container .point {
+    position: absolute;
+    width: 3%;
+    height: 3%;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#map-container .location, .location1, .location2, .location3 {
+    background-size: 90% 90%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#map-container .location {
+    background-image: url("/images/Temperature3.png");
+    background-color: rgb(248, 244, 4);
+}
+
+#map-container .location1 {
+    background-image: url("/images/CO3.png");
+    background-color: rgb(236, 120, 236);
+}
+
+#map-container .location2 {
+    background-image: url("/images/Contact.png");
+    background-color: rgb(255, 166, 1);
+}
+
+#map-container .location3 {
+    background-image: url("/images/Mouvement.png");
+    background-color: rgb(50, 205, 50);
+}
+
+#map-container .location#cap1 {
+    top: 44%;
+    left: 11%;
+}
+
+#map-container .location#cap2 {
+    top: 23%;
+    left: 19%;
+}
+
+#map-container .location#cap3 {
+    top: 19%;
+    left: 37%;
+}
+
+#map-container .location#cap4 {
+    top: 35%;
+    left: 50%;
+}
+
+#map-container .location#cap5 {
+    top: 53%;
+    left: 42%;
+}
+
+#map-container .location#cap6 {
+    top: 77%;
+    left: 64%;
+}
+
+#map-container .location#cap7 {
+    top: 86%;
+    left: 71%;
+}
+
+#map-container .location#cap8 {
+    top: 33%;
+    left: 92%;
+}
+
+#map-container .location1#cap9 {
+    top: 20%;
+    left: 20%;
+}
+
+#map-container .location1#cap10 {
+    top: 32%;
+    left: 51%;
+}
+
+#map-container .location1#cap11 {
+    top: 61%;
+    left: 64%;
+}
+
+#map-container .location1#cap12 {
+    top: 31%;
+    left: 87.5%;
+}
+
+#map-container .location2#cap13 {
+    top: 33%;
+    left: 15%;
+}
+
+#map-container .location2#cap14 {
+    top: 31%;
+    left: 16%;
+}
+
+#map-container .location2#cap15 {
+    top: 47%;
+    left: 45%;
+}
+
+#map-container .location2#cap16 {
+    top: 45%;
+    left: 46%;
+}
+
+#map-container .location2#cap17 {
+    top: 74%;
+    left: 61%;
+}
+
+#map-container .location2#cap18 {
+    top: 82%;
+    left: 66%;
+}
+
+#map-container .location3#cap19 {
+    top: 44%;
+    left: 50%;
+}
+
+#map-container .location3#cap20 {
+    top: 32%;
+    left: 76%;
+}

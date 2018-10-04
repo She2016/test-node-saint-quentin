@@ -4,8 +4,17 @@ var geobing = require('geobing');
 var csv = require("fast-csv");
 var router = express.Router();
 
+// var pgp = require('pg-promise')(options);
+// // Setup connection
+var username = "postgres" // sandbox username
+var password = "1234" // read only privileges on our table
+var host = "localhost:5433"
+var database = "saint_quntin" // database name
+var conString = "postgres://" + username + ":" + password + "@" + host + "/" + database; // Your Database Connection
+
+//var db = pgp(connectionString);
 /* PostgreSQL and PostGIS module and connection setup */
-//const { Client, Query } = require('pg')
+const { Client, Query } = require('pg')
 
 geobing.setKey("AnDzjy0uPm1-k3hkW2P6so-OBH4lerjGw9CuT7eCN6zos-weYUf2Her8eaoeMh8E");
 
@@ -33,12 +42,6 @@ router.get('/data', function (req, res) {
 
 router.get('/geocoder', function (req, res) {
 
-  // var newArray = [];
-  // var stream = fs.createReadStream("./csv/points.csv", { encoding: 'binary' });
-
-  // var parser = csv.fromStream(stream, { headers: true, objectMode: true })
-  //   .on("data", function (data) {
-  //     parser.pause();
       var item = {};
       geobing.getInfoFromCoordinates({ lat: 49.848450637924, lng: 3.29963207244873 }, function (err, result) {
         item.address = result.address.formattedAddress;
@@ -47,24 +50,9 @@ router.get('/geocoder', function (req, res) {
         item.zip = result.address.postalCode;
         item.street = result.address.addressLine;
         item.district = result.address.adminDistrict;
-        //item.name = data.name;
-        // item.lon = data.lon;
-        // item.lat = data.lat;
-        //newArray.push(item);
-        //console.log(result.name)
-        //parser.resume();
-      //});
+    
         res.send(result)
     })
-    //.on("end", function () {
-      // var ws = fs.createWriteStream("./csv/output.csv", { encoding: "utf8" });
-      // csv
-      //   .write(newArray, { headers: true })
-      //   .pipe(ws);
-      //res.send(newArray)
-    //});
-
-
 });
 
 /* GET the map page */

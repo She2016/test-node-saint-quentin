@@ -1,0 +1,235 @@
+extends layoutt
+block content
+  .row
+    .col-lg-6
+      #map-container
+        #legend.legend
+          table
+            tr
+              td.left
+                .poin.location
+              td.right Temperature
+            tr
+              td.left
+                .poin.location1
+              td.right CO2
+            tr
+              td.left
+                .poin.location2
+              td.right Contact
+            tr
+              td.left
+                .poin.location3
+              td.right Mouvement
+        img(src='images/lamanufacture.png' style='width:100%;height:100%;')
+        #cap1.point.location(name='24')
+        #cap2.point.location(name='23')
+        #cap3.point.location(name='18')
+        #cap4.point.location(name='19')
+        #cap5.point.location(name='20')
+        // <div id="cap6" name="27" class="point location"></div>
+        #cap7.point.location(name='28')
+        #cap8.point.location(name='21')
+        #cap9.point.location1(name='4')
+        #cap10.point.location1(name='10')
+        #cap11.point.location1(name='8')
+        #cap12.point.location1(name='6')
+        #cap13.point.location2(name='12')
+        #cap14.point.location2(name='13')
+        #cap15.point.location2(name='14')
+        #cap16.point.location2(name='15')
+        #cap17.point.location2(name='25')
+        #cap18.point.location2(name='26')
+        #cap19.point.location3(name='2')
+        #cap20.point.location3(name='3')
+    .col-lg-6
+      #charts
+        .ajax-loader
+          img.img-responsive(src='images/tenor.gif')
+      #averags.row
+        .col-lg-12
+          .row
+            .col-lg-6.vertical-align
+              img.center(src='images/Temperature1.png')
+              #temp.values.temp
+            .col-lg-6.vertical-align
+              img.center(src='images/Humidite.png')
+              #hum.values.hum
+          .row
+            .col-lg-6.vertical-align
+              img.center(src='images/CO2.png')
+              #co2.values.co2
+            .col-lg-6.vertical-align
+              img.center(src='images/Bruit.png')
+              #brui.values.brui
+  script.
+    var colors = ['#4572A7', '#AA4643', '#8bbc21', '#80699B'];
+
+    function visitorData(data, name, type, index) {
+      var chart = "<div id='chart" + index + "' class='chart'></div>";
+      $("#charts").append(chart);
+      $('#chart' + index).highcharts({
+        chart: {
+          //type: 'area',
+          events: {
+            selection: function (event) {
+              if (event.xAxis != null) {
+                var mindate = moment(event.xAxis[0].min).format("D/M/YYYY H:mm");
+                var maxdate = moment(event.xAxis[0].max).format("D/M/YYYY H:mm");
+                console.log("selection: ", mindate, maxdate);
+              } else
+                console.log("selection: reset");
+            }
+          },
+          zoomType: 'x'
+        },
+        title: {
+          text: ''
+        },
+        xAxis: {
+          type: 'datetime',
+          dateTimeLabelFormats: { // don't display the dummy year
+            hour: '%H:%M',
+            day: '%e. %b',
+            month: '%e. %b',
+            year: '%b'
+          }
+        },
+        yAxis: {
+          min: 0,
+          max: type == "Luminosite" ? 500 : (type == "Bruit" ? 60 : null),
+          plotBands: [{ // mark the weekend
+            color: '#0f0',
+            from: type == "Temperature" ? 18 : (type == "Humidite" ? 30 : 0),
+            to: type == "Temperature" ? 25 : (type == "Humidite" ? 70 : 10000),
+            label: {
+              text: type,
+              align: 'center',
+              x: -10,
+              style: {
+                color: '#000',
+                fontWeight: 'bold',
+                fontSize: 12
+              }
+            }
+          }],
+          plotLines: [{
+            value: type == "Temperature" ? 18 : (type == "Humidite" ? 30 : 0),
+            color: '#000',
+            dashStyle: 'shortdash',
+            width: 1,
+          }, {
+            value: type == "Temperature" ? 25 : (type == "Humidite" ? 70 : 10000),
+            color: '#000',
+            dashStyle: 'shortdash',
+            width: 1,
+          }],
+          title: {
+            enabled: false
+          }
+        },
+        tooltip: {
+          //headerFormat: '<b>{series.name}</b><br>',
+          pointFormat: '{point.x:%e. %b at %H:%M} {point.y:.2f}'
+        },
+        plotOptions: {
+          series: {
+            zones: [{
+              value: type == "Temperature" ? 18 : (type == "Humidite" ? 30 : 0),
+              color: 'blue', // ... have the color blue
+              //className: 'zone-1'
+            }, {
+              value: type == "Temperature" ? 25 : (type == "Humidite" ? 70 : 10000),
+              color: 'green', // ... have the color orange
+              className: 'zone-0'
+            }, {
+              color: 'red', // Values from 10 (including) and up have the color red
+              //className: 'zone-2'
+            }]
+          }
+        },
+        series: [{
+          //name: '',
+          data,
+          color: colors[index - 1],
+          showInLegend: false
+        }]
+      });
+    }
+
+    function averages() {
+      var ure = `http://localhost/saint_quentin/api/averages`;
+      $.ajax({
+        url: ure,
+        type: "GET",
+        dataType: "JSON",
+      }).done(function (data, status, xhr) {
+        $("#temp").html('<div style="width:100%">' + data.temp.toFixed(0) + 'C° </div><div class="smal">Zone de confort (18 C° - 25 C°)</div>');
+        $("#hum").html('<div style="width:100%">' + data.hum.toFixed(0) + ' % </div><div class="smal">Zone de confort (30 % - 70 %)</div>');
+        $("#co2").html('<div style="width:100%">' + data.co2 + ' ppm </div><div class="smal">Zone de confort (< 1300 ppm)</div>');
+        $("#brui").html('<div style="width:100%">' + data.brui.toFixed(0) + ' db </div><div class="smal">Zone de confort (< 85 dB - 120 dB : seuil de douleur)</div>');
+      }).error(function (jqXHR, textStatus, errorThrown) {
+        console.log("error " + textStatus + errorThrown);
+        console.log("incoming Text " + jqXHR.responseText);
+      })
+    }
+
+    function averages_hestoric() {
+      var ure = `http://localhost/saint_quentin/api/averages_hestoric`;
+      $.ajax({
+        url: ure,
+        type: "GET",
+        dataType: "JSON",
+      }).done(function (data, status, xhr) {
+        // data.forEach(function (obj, index) {
+        //     visitorData(obj.data, obj.name, obj.type, index + 1);
+        // });
+      }).error(function (jqXHR, textStatus, errorThrown) {
+        console.log("error " + textStatus + errorThrown);
+        console.log("incoming Text " + jqXHR.responseText);
+      })
+    }
+    $("#maintenant").click(function () {
+      averages();
+      $('#averags').show();
+      $('#charts').hide();
+    });
+    $("#hestoric").click(function () {
+      averages_hestoric();
+      $('#averags').hide();
+      $('#charts').show();
+    });
+    $(document).ready(function () {
+      averages();
+      //averages_hestoric()
+      $(".point").click(function () {
+        for (var i = 1; i < 5; i++) {
+          $('#chart' + i).remove();
+        }
+        $('#charts').show();
+        $('#averags').hide();
+        var id = parseInt($(this).attr("name"));
+        var url = `http://localhost/saint_quentin/api/chart/${id}`;
+        $.ajax({
+          url: url,
+          type: "GET",
+          beforeSend: function () {
+            $('.ajax-loader').css("display", "block");
+          },
+          dataType: "JSON",
+          success: function (data) {
+            data.forEach(function (obj, index) {
+              visitorData(obj.data, obj.name, obj.type, index + 1);
+            });
+            //visitorData(data);
+          },
+          error: function (jqXHR, textStatus, errorThrown) { // if error occured
+            console.log("error " + textStatus + errorThrown);
+            console.log("incoming Text " + jqXHR.responseText);
+          },
+          complete: function () {
+            $('.ajax-loader').css("display", "none");
+          }
+        })
+      });
+    });

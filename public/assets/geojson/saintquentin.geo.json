@@ -1,0 +1,65 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 1,
+                "nom": "La Manufacture",
+                "image": "Manufacture.jpg"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.270347714,
+                    49.85443095
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 2,
+                "nom": "Restaurant scolaire François Collery",
+                "image": "Restaurant-Scolaire-Collery.jpg"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.305463195,
+                    49.85388621
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 3,
+                "nom": "Centre Social Saint-Martin",
+                "image": "Centre-Social-Saint-Martin.JPG"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.260090947,
+                    49.83612797
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 4,
+                "nom": "Maison de Services",
+                "image": "Maison-de-Services.jpg"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.300608397,
+                    49.8389114
+                ]
+            }
+        }
+    ]
+}

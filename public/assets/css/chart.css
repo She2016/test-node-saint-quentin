@@ -1,0 +1,20 @@
+.chart {
+    width: 50%;
+    height: 300px;
+    float: left;
+    margin: 5% 0;
+}
+
+.highcharts-point {
+	stroke: white;
+}
+
+.highcharts-plot-band, .highcharts-pane {
+    fill: #87eb6e !important;
+    fill-opacity: 0.5 !important;
+}
+
+.highcharts-plot-band-label {
+    font-size: 1em;
+}
+

@@ -1,0 +1,1183 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 1,
+                "type": "école",
+                "sub_category": 1,
+                "Categorie": "Mat et Elem",
+                "nom": "Groupe Scolaire HenriI ARNOULD ",
+                "Adresse": " 5 rue Leon Lemaire",
+                "Code_postale": 2100,
+                "Ville": "Saint-Quentin",
+                "usage_principale": "",
+                "date_de_construction": "",
+                "nombre_de_batiments": "",
+                "nombre_de_niveaux": "",
+                "surface_totale": "",
+                "compacite": "",
+                "periode_d_occupation_des_locaux": "",
+                "hauteur_sous_plafond_moyenne": "",
+                "zone_climatique": "H1a",
+                "temp_exterieure_de_base": -7,
+                "orientation_principale": "",
+                "detail_des_surfaces": "",
+                "chauffage": "",
+                "ecs": "",
+                "renouvellement_d_air": "",
+                "remarques": "",
+                "plan": "",
+                "image": ""
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.317452669,
+                    49.83516264
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 2,
+                "type": "école",
+                "sub_category": 1,
+                "Categorie": "Mat et Elem",
+                "nom": "Groupe Scolaire Quentin BARRE",
+                "Adresse": "Impasse Jacquard  et 59 rue Quentin Barr??",
+                "Code_postale": 2100,
+                "Ville": "Saint-Quentin",
+                "usage_principale": "",
+                "date_de_construction": "",
+                "nombre_de_batiments": "",
+                "nombre_de_niveaux": "",
+                "surface_totale": "",
+                "compacite": "",
+                "periode_d_occupation_des_locaux": "",
+                "hauteur_sous_plafond_moyenne": "",
+                "zone_climatique": "H1a",
+                "temp_exterieure_de_base": -7,
+                "orientation_principale": "",
+                "detail_des_surfaces": "",
+                "chauffage": "",
+                "ecs": "",
+                "renouvellement_d_air": "",
+                "remarques": "",
+                "plan": "",
+                "image": ""
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.298704028,
+                    49.8486184
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 3,
+                "type": "école",
+                "sub_category": 1,
+                "Categorie": "Mat et Elem",
+                "nom": "Groupe Scolaire PAUL BERT ",
+                "Adresse": "66 rue du Fleming",
+                "Code_postale": 2100,
+                "Ville": "Saint-Quentin",
+                "usage_principale": "",
+                "date_de_construction": "",
+                "nombre_de_batiments": "",
+                "nombre_de_niveaux": "",
+                "surface_totale": "",
+                "compacite": "",
+                "periode_d_occupation_des_locaux": "",
+                "hauteur_sous_plafond_moyenne": "",
+                "zone_climatique": "H1a",
+                "temp_exterieure_de_base": -7,
+                "orientation_principale": "",
+                "detail_des_surfaces": "",
+                "chauffage": "",
+                "ecs": "",
+                "renouvellement_d_air": "",
+                "remarques": "",
+                "plan": "",
+                "image": ""
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.305342495,
+                    49.86296777
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 4,
+                "type": "école",
+                "sub_category": 1,
+                "Categorie": "Mat et Elem",
+                "nom": "Groupe Scolaire FRAN??OIS COLLERY ",
+                "Adresse": "88 rue Henry Dunant",
+                "Code_postale": 2100,
+                "Ville": "Saint-Quentin",
+                "usage_principale": "",
+                "date_de_construction": "",
+                "nombre_de_batiments": "",
+                "nombre_de_niveaux": "",
+                "surface_totale": "",
+                "compacite": "",
+                "periode_d_occupation_des_locaux": "",
+                "hauteur_sous_plafond_moyenne": "",
+                "zone_climatique": "H1a",
+                "temp_exterieure_de_base": -7,
+                "orientation_principale": "",
+                "detail_des_surfaces": "",
+                "chauffage": "",
+                "ecs": "",
+                "renouvellement_d_air": "",
+                "remarques": "",
+                "plan": "",
+                "image": ""
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.305114508,
+                    49.85433756
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 5,
+                "type": "école",
+                "sub_category": 1,
+                "Categorie": "Mat et Elem",
+                "nom": "Groupe Scolaire CORRETTE ",
+                "Adresse": "39 rue Briatte ",
+                "Code_postale": 2100,
+                "Ville": "Saint-Quentin",
+                "usage_principale": "",
+                "date_de_construction": "",
+                "nombre_de_batiments": "",
+                "nombre_de_niveaux": "",
+                "surface_totale": "",
+                "compacite": "",
+                "periode_d_occupation_des_locaux": "",
+                "hauteur_sous_plafond_moyenne": "",
+                "zone_climatique": "H1a",
+                "temp_exterieure_de_base": -7,
+                "orientation_principale": "",
+                "detail_des_surfaces": "",
+                "chauffage": "",
+                "ecs": "",
+                "renouvellement_d_air": "",
+                "remarques": "",
+                "plan": "",
+                "image": ""
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.308386803,
+                    49.83278038
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 6,
+                "type": "école",
+                "sub_category": 1,
+                "Categorie": "Mat et Elem",
+                "nom": "Groupe Scolaire CAMILLE DESMOULINS ",
+                "Adresse": "2 rue Louise Hugues et 109 rue Camille Desmoulins",
+                "Code_postale": 2100,
+                "Ville": "Saint-Quentin",
+                "usage_principale": "",
+                "date_de_construction": "",
+                "nombre_de_batiments": "",
+                "nombre_de_niveaux": "",
+                "surface_totale": "",
+                "compacite": "",
+                "periode_d_occupation_des_locaux": "",
+                "hauteur_sous_plafond_moyenne": "",
+                "zone_climatique": "H1a",
+                "temp_exterieure_de_base": -7,
+                "orientation_principale": "",
+                "detail_des_surfaces": "",
+                "chauffage": "",
+                "ecs": "",
+                "renouvellement_d_air": "",
+                "remarques": "",
+                "plan": "",
+                "image": ""
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.295085728,
+                    49.85425456
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 7,
+                "type": "école",
+                "sub_category": 1,
+                "Categorie": "Mat et Elem",
+                "nom": "Groupe Scolaire LES GIRONDINS ",
+                "Adresse": "Place des Girondins - 40 rue des Girondins",
+                "Code_postale": 2100,
+                "Ville": "Saint-Quentin",
+                "usage_principale": "Ecole primaire et élementaire",
+                "date_de_construction": 1921,
+                "nombre_de_batiments": 9,
+                "nombre_de_niveaux": "3 (Sous-sol.RDC et étage)",
+                "surface_totale": 3061,
+                "compacite": "Ecole maternelle: 120 enfants et 5 enseignantsEcole primaire: 291 éléves",
+                "periode_d_occupation_des_locaux": "NC",
+                "hauteur_sous_plafond_moyenne": "RDC: 2.9 m",
+                "zone_climatique": "H1a",
+                "temp_exterieure_de_base": -7,
+                "orientation_principale": "Ecole élémentaire filles: Sud EstEcole élémentaire Garéons: Nord OuestEcole élémentaire: Ouest",
+                "detail_des_surfaces": "",
+                "chauffage": "Chauffage au gaz",
+                "ecs": "Ballons électriques décentralisés",
+                "renouvellement_d_air": "Ventilation naturelle par infiltration",
+                "remarques": "",
+                "plan": "",
+                "image": ""
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.307804763,
+                    49.83824021
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 8,
+                "type": "école",
+                "sub_category": 1,
+                "Categorie": "Mat et Elem",
+                "nom": "Groupe Scolaire d'Isle. Ecole  POLVENT ",
+                "Adresse": "1 rue d'Ostende",
+                "Code_postale": 2100,
+                "Ville": "Saint-Quentin",
+                "usage_principale": "",
+                "date_de_construction": "",
+                "nombre_de_batiments": "",
+                "nombre_de_niveaux": "",
+                "surface_totale": "",
+                "compacite": "",
+                "periode_d_occupation_des_locaux": "",
+                "hauteur_sous_plafond_moyenne": "",
+                "zone_climatique": "H1a",
+                "temp_exterieure_de_base": -7,
+                "orientation_principale": "",
+                "detail_des_surfaces": "",
+                "chauffage": "",
+                "ecs": "",
+                "renouvellement_d_air": "",
+                "remarques": "",
+                "plan": "",
+                "image": ""
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.298915923,
+                    49.83884912
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 9,
+                "type": "école",
+                "sub_category": 1,
+                "Categorie": "Mat et Elem",
+                "nom": "Groupe Scolaire Pierre LAROCHE ",
+                "Adresse": "2 rue Andr?? Godin",
+                "Code_postale": 2100,
+                "Ville": "Saint-Quentin",
+                "usage_principale": "Ecole maternelle et primaire. Gymnase et logements",
+                "date_de_construction": 1965,
+                "nombre_de_batiments": "3 (maternelle. primaire et gymnase)",
+                "nombre_de_niveaux": "Maternelle: 1 (RDC)Primaire: 4 (RDC. R+1. R+2. et R+3)Gymnase: 1 (RDC)",
+                "surface_totale": 6141,
+                "compacite": "NC",
+                "periode_d_occupation_des_locaux": "NC",
+                "hauteur_sous_plafond_moyenne": "Maternelle: RDC: 3.40 mPrimaire: RDC. R+1. R+2: 3.40 m ; R+3: NCGymnase: RDC: 14m",
+                "zone_climatique": "H1a",
+                "temp_exterieure_de_base": -7,
+                "orientation_principale": "Maternelle: Nord / OuestPrimaire: Sud / OuestGymnase: Sud / Ouest",
+                "detail_des_surfaces": "",
+                "chauffage": "Chauffage urbain / sous station dans le bétiment maternelle",
+                "ecs": "Maternelle et primaire: ElectriqueGymnase: Centralisée en chauffage urbain",
+                "renouvellement_d_air": "Maternelle: Ventilation naturelle par infiltraationPrimaire: Ventilation naturelle par infiltration dans les salles de classe. et ventilation spécifique pour la zone de cuisine avec 2 hottes d'extrationGymnase: Pas de ventilation dans les vestiaires. et deux aérothermes avec caissons d'air neuf et d'air mélangé dans la grande salle de sport",
+                "remarques": "Le gymnase é été réhabillité récemmentLes 7 logements faisant initialement partidu groupe scolaire ne font plus partie de ce dernier. ils ne sont plus gérés par la Ville.",
+                "plan": "",
+                "image": ""
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.298060298,
+                    49.8622364
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 10,
+                "type": "école",
+                "sub_category": 1,
+                "Categorie": "Mat et Elem",
+                "nom": "Groupe Scolaire METZ ",
+                "Adresse": "2 rue de Metz",
+                "Code_postale": 2100,
+                "Ville": "Saint-Quentin",
+                "usage_principale": "Ecole maternelle et primaire",
+                "date_de_construction": 1954,
+                "nombre_de_batiments": 1,
+                "nombre_de_niveaux": 3,
+                "surface_totale": 1253,
+                "compacite": 0.35,
+                "periode_d_occupation_des_locaux": "de 7h45 é 18h00",
+                "hauteur_sous_plafond_moyenne": "3.2 m",
+                "zone_climatique": "H1a",
+                "temp_exterieure_de_base": -7,
+                "orientation_principale": "Nord / Sud",
+                "detail_des_surfaces": "",
+                "chauffage": "Chaufferie gazplancher chauffant",
+                "ecs": "Electrique",
+                "renouvellement_d_air": "Ventilation naturelle par infiltrationextracteur dans la piéce d'eau",
+                "remarques": "Le bétiment est rattaché au collége. appartenant au conseil régional. qui approvisionne léécole primaire/maternelle enchaleur.Léécole a été rénovée en 2002 : remplacement des fenétres. mise en place de rideau. indépendance électrique(compteur bleu).",
+                "plan": "",
+                "image": ""
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.290957808,
+                    49.84921162
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 11,
+                "type": "école",
+                "sub_category": 1,
+                "Categorie": "Mat et Elem",
+                "nom": "Groupe Scolaire Marcel PAGNOL ",
+                "Adresse": "127 rue du G??n??ral Leclerc",
+                "Code_postale": 2100,
+                "Ville": "Saint-Quentin",
+                "usage_principale": "",
+                "date_de_construction": "",
+                "nombre_de_batiments": "",
+                "nombre_de_niveaux": "",
+                "surface_totale": "",
+                "compacite": "",
+                "periode_d_occupation_des_locaux": "",
+                "hauteur_sous_plafond_moyenne": "",
+                "zone_climatique": "H1a",
+                "temp_exterieure_de_base": -7,
+                "orientation_principale": "",
+                "detail_des_surfaces": "",
+                "chauffage": "",
+                "ecs": "",
+                "renouvellement_d_air": "",
+                "remarques": "",
+                "plan": "",
+                "image": ""
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.302746117,
+                    49.83832497
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 12,
+                "type": "école",
+                "sub_category": 1,
+                "Categorie": "Mat et Elem",
+                "nom": "Groupe Scolaire Robert SCHUMAN ",
+                "Adresse": "Rue Berthollet",
+                "Code_postale": 2100,
+                "Ville": "Saint-Quentin",
+                "usage_principale": "Etablissement scolaire",
+                "date_de_construction": "NC",
+                "nombre_de_batiments": 3,
+                "nombre_de_niveaux": "1 é 4",
+                "surface_totale": 3578,
+                "compacite": 1.86,
+                "periode_d_occupation_des_locaux": "",
+                "hauteur_sous_plafond_moyenne": "RDC (logements): 3 mRDC (autres bétiments): 3.3 mR+1: 2.6 mR+2: 2.6 mR+3: 2.5 m",
+                "zone_climatique": "H1a",
+                "temp_exterieure_de_base": -7,
+                "orientation_principale": "Est/Ouest",
+                "detail_des_surfaces": "",
+                "chauffage": "Réseau Urbain",
+                "ecs": "Réseau urbain + ballons ECS électriques décentralisés",
+                "renouvellement_d_air": "Ventilation naturelle par infiltration et ventilation mécanique",
+                "remarques": "Le groupe se divise en trois structures :La maternelle et les logementsLéécole élémentaire Le gymnase",
+                "plan": "",
+                "image": ""
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.295260072,
+                    49.85955634
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 13,
+                "type": "école",
+                "sub_category": 2,
+                "Categorie": "Maternelle",
+                "nom": "Groupe Scolaire XAVIER AUBRYET ",
+                "Adresse": "10 rue Xavier AUBRYET",
+                "Code_postale": 2100,
+                "Ville": "Saint-Quentin",
+                "usage_principale": "",
+                "date_de_construction": "",
+                "nombre_de_batiments": "",
+                "nombre_de_niveaux": "",
+                "surface_totale": "",
+                "compacite": "",
+                "periode_d_occupation_des_locaux": "",
+                "hauteur_sous_plafond_moyenne": "",
+                "zone_climatique": "H1a",
+                "temp_exterieure_de_base": -7,
+                "orientation_principale": "",
+                "detail_des_surfaces": "",
+                "chauffage": "",
+                "ecs": "",
+                "renouvellement_d_air": "",
+                "remarques": "",
+                "plan": "",
+                "image": ""
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.274043798,
+                    49.84194029
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 14,
+                "type": "école",
+                "sub_category": 1,
+                "Categorie": "Mat et Elem",
+                "nom": "Groupe Scolaire Georges BACHY ",
+                "Adresse": "146 Rue d'??pargnemailles",
+                "Code_postale": 2100,
+                "Ville": "Saint-Quentin",
+                "usage_principale": "",
+                "date_de_construction": "",
+                "nombre_de_batiments": "",
+                "nombre_de_niveaux": "",
+                "surface_totale": "",
+                "compacite": "",
+                "periode_d_occupation_des_locaux": "",
+                "hauteur_sous_plafond_moyenne": "",
+                "zone_climatique": "H1a",
+                "temp_exterieure_de_base": -7,
+                "orientation_principale": "",
+                "detail_des_surfaces": "",
+                "chauffage": "",
+                "ecs": "",
+                "renouvellement_d_air": "",
+                "remarques": "",
+                "plan": "",
+                "image": ""
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.272858262,
+                    49.85243183
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 15,
+                "type": "école",
+                "sub_category": 1,
+                "Categorie": "Mat et Elem",
+                "nom": "Groupe Scolaire Ferdinand BUISSON ",
+                "Adresse": "80 Rue Henriette Cabot  et 82 Rue Henriette Cabot  ",
+                "Code_postale": 2100,
+                "Ville": "Saint-Quentin",
+                "usage_principale": "",
+                "date_de_construction": "",
+                "nombre_de_batiments": "",
+                "nombre_de_niveaux": "",
+                "surface_totale": "",
+                "compacite": "",
+                "periode_d_occupation_des_locaux": "",
+                "hauteur_sous_plafond_moyenne": "",
+                "zone_climatique": "H1a",
+                "temp_exterieure_de_base": -7,
+                "orientation_principale": "",
+                "detail_des_surfaces": "",
+                "chauffage": "",
+                "ecs": "",
+                "renouvellement_d_air": "",
+                "remarques": "",
+                "plan": "",
+                "image": ""
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.272359371,
+                    49.86134076
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 16,
+                "type": "école",
+                "sub_category": 1,
+                "Categorie": "Mat et Elem",
+                "nom": "Groupe Scolaire Alfred CLIN ",
+                "Adresse": "99 Rue de la Claie",
+                "Code_postale": 2100,
+                "Ville": "Saint-Quentin",
+                "usage_principale": "Ecole primaire et maternelle",
+                "date_de_construction": 1912,
+                "nombre_de_batiments": 2,
+                "nombre_de_niveaux": "3 (Sous-Sol: Chaufferies et restaurant. RDC: Ecole. Etage: Ecole)",
+                "surface_totale": 2075,
+                "compacite": "Ecole maternelle: 91 éléves et 4 enseignantsEcole élementaire 143 éléves et 9 enseignants",
+                "periode_d_occupation_des_locaux": "NC",
+                "hauteur_sous_plafond_moyenne": "Sous-sol: 2.5mRDC: 2.8mR+1: 2.8m",
+                "zone_climatique": "H1a",
+                "temp_exterieure_de_base": -7,
+                "orientation_principale": "Entrée faéade Sud",
+                "detail_des_surfaces": "",
+                "chauffage": "Chauffage au gaz",
+                "ecs": "Ballons électriques décentralisés",
+                "renouvellement_d_air": "Ventilation naturelle par infiltration",
+                "remarques": "Restauration en 1921",
+                "plan": "",
+                "image": ""
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.287315369,
+                    49.85645419
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 17,
+                "type": "école",
+                "sub_category": 1,
+                "Categorie": "Mat et Elem",
+                "nom": "Groupe Scolaire Ernest LAVISSE ",
+                "Adresse": "218 route de Paris",
+                "Code_postale": 2100,
+                "Ville": "Saint-Quentin",
+                "usage_principale": "",
+                "date_de_construction": "",
+                "nombre_de_batiments": "",
+                "nombre_de_niveaux": "",
+                "surface_totale": "",
+                "compacite": "",
+                "periode_d_occupation_des_locaux": "",
+                "hauteur_sous_plafond_moyenne": "",
+                "zone_climatique": "H1a",
+                "temp_exterieure_de_base": -7,
+                "orientation_principale": "",
+                "detail_des_surfaces": "",
+                "chauffage": "",
+                "ecs": "",
+                "renouvellement_d_air": "",
+                "remarques": "",
+                "plan": "",
+                "image": ""
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.265975714,
+                    49.83672999
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 18,
+                "type": "école",
+                "sub_category": 1,
+                "Categorie": "Mat et Elem",
+                "nom": "Groupe Scolaire Lyon JUMENTIER",
+                "Adresse": "3 Rue des Glatiniers",
+                "Code_postale": 2100,
+                "Ville": "Saint-Quentin",
+                "usage_principale": "",
+                "date_de_construction": "",
+                "nombre_de_batiments": "",
+                "nombre_de_niveaux": "",
+                "surface_totale": "",
+                "compacite": "",
+                "periode_d_occupation_des_locaux": "",
+                "hauteur_sous_plafond_moyenne": "",
+                "zone_climatique": "H1a",
+                "temp_exterieure_de_base": -7,
+                "orientation_principale": "",
+                "detail_des_surfaces": "",
+                "chauffage": "",
+                "ecs": "",
+                "renouvellement_d_air": "",
+                "remarques": "",
+                "plan": "",
+                "image": ""
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.284826279,
+                    49.84561068
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 19,
+                "type": "école",
+                "sub_category": 1,
+                "Categorie": "Mat et Elem",
+                "nom": "Groupe Scolaire Jean MACE ",
+                "Adresse": "Rue du Commandant Charcot ",
+                "Code_postale": 2100,
+                "Ville": "Saint-Quentin",
+                "usage_principale": "",
+                "date_de_construction": "",
+                "nombre_de_batiments": "",
+                "nombre_de_niveaux": "",
+                "surface_totale": "",
+                "compacite": "",
+                "periode_d_occupation_des_locaux": "",
+                "hauteur_sous_plafond_moyenne": "",
+                "zone_climatique": "H1a",
+                "temp_exterieure_de_base": -7,
+                "orientation_principale": "",
+                "detail_des_surfaces": "",
+                "chauffage": "",
+                "ecs": "",
+                "renouvellement_d_air": "",
+                "remarques": "",
+                "plan": "",
+                "image": ""
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.266630173,
+                    49.84628869
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 20,
+                "type": "école",
+                "sub_category": 2,
+                "Categorie": "Maternelle",
+                "nom": "Groupe Scolaire MONTPLAISIR",
+                "Adresse": "53 rue de la 3??me D.I.M",
+                "Code_postale": 2100,
+                "Ville": "Saint-Quentin",
+                "usage_principale": "",
+                "date_de_construction": "",
+                "nombre_de_batiments": "",
+                "nombre_de_niveaux": "",
+                "surface_totale": "",
+                "compacite": "",
+                "periode_d_occupation_des_locaux": "",
+                "hauteur_sous_plafond_moyenne": "",
+                "zone_climatique": "H1a",
+                "temp_exterieure_de_base": -7,
+                "orientation_principale": "",
+                "detail_des_surfaces": "",
+                "chauffage": "",
+                "ecs": "",
+                "renouvellement_d_air": "",
+                "remarques": "",
+                "plan": "",
+                "image": ""
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.275696039,
+                    49.85091514
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 21,
+                "type": "école",
+                "sub_category": 2,
+                "Categorie": "Maternelle",
+                "nom": "Groupe Scolaire MONTESSORI",
+                "Adresse": "1 rue Fran??ois Adrien Boieldieu",
+                "Code_postale": 2100,
+                "Ville": "Saint-Quentin",
+                "usage_principale": "",
+                "date_de_construction": "",
+                "nombre_de_batiments": "",
+                "nombre_de_niveaux": "",
+                "surface_totale": "",
+                "compacite": "",
+                "periode_d_occupation_des_locaux": "",
+                "hauteur_sous_plafond_moyenne": "",
+                "zone_climatique": "H1a",
+                "temp_exterieure_de_base": -7,
+                "orientation_principale": "",
+                "detail_des_surfaces": "",
+                "chauffage": "",
+                "ecs": "",
+                "renouvellement_d_air": "",
+                "remarques": "",
+                "plan": "",
+                "image": ""
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.269489408,
+                    49.85284688
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 22,
+                "type": "école",
+                "sub_category": 3,
+                "Categorie": "El??mentaire",
+                "nom": "Groupe Scolaire AMEDEE OZENFANT",
+                "Adresse": "61 rue des Patriotes",
+                "Code_postale": 2100,
+                "Ville": "Saint-Quentin",
+                "usage_principale": "",
+                "date_de_construction": "",
+                "nombre_de_batiments": "",
+                "nombre_de_niveaux": "",
+                "surface_totale": "",
+                "compacite": "",
+                "periode_d_occupation_des_locaux": "",
+                "hauteur_sous_plafond_moyenne": "",
+                "zone_climatique": "H1a",
+                "temp_exterieure_de_base": -7,
+                "orientation_principale": "",
+                "detail_des_surfaces": "",
+                "chauffage": "",
+                "ecs": "",
+                "renouvellement_d_air": "",
+                "remarques": "",
+                "plan": "",
+                "image": ""
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.290448189,
+                    49.84287089
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 23,
+                "type": "école",
+                "sub_category": 3,
+                "Categorie": "El??mentaire",
+                "nom": "Groupe Scolaire PARINGAULT",
+                "Adresse": "1 rue de la 3??me D.I.M",
+                "Code_postale": 2100,
+                "Ville": "Saint-Quentin",
+                "usage_principale": "",
+                "date_de_construction": "",
+                "nombre_de_batiments": "",
+                "nombre_de_niveaux": "",
+                "surface_totale": "",
+                "compacite": "",
+                "periode_d_occupation_des_locaux": "",
+                "hauteur_sous_plafond_moyenne": "",
+                "zone_climatique": "H1a",
+                "temp_exterieure_de_base": -7,
+                "orientation_principale": "",
+                "detail_des_surfaces": "",
+                "chauffage": "",
+                "ecs": "",
+                "renouvellement_d_air": "",
+                "remarques": "",
+                "plan": "",
+                "image": ""
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.276940584,
+                    49.84875503
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 24,
+                "type": "école",
+                "sub_category": 2,
+                "Categorie": "Maternelle",
+                "nom": "Groupe Scolaire des PATRIOTES",
+                "Adresse": "38 bis et 40 rue des Patriotes",
+                "Code_postale": 2100,
+                "Ville": "Saint-Quentin",
+                "usage_principale": "",
+                "date_de_construction": "",
+                "nombre_de_batiments": "",
+                "nombre_de_niveaux": "",
+                "surface_totale": "",
+                "compacite": "",
+                "periode_d_occupation_des_locaux": "",
+                "hauteur_sous_plafond_moyenne": "",
+                "zone_climatique": "H1a",
+                "temp_exterieure_de_base": -7,
+                "orientation_principale": "",
+                "detail_des_surfaces": "",
+                "chauffage": "",
+                "ecs": "",
+                "renouvellement_d_air": "",
+                "remarques": "",
+                "plan": "",
+                "image": ""
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.288887143,
+                    49.84382655
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 25,
+                "type": "école",
+                "sub_category": 1,
+                "Categorie": "Mat et Elem",
+                "nom": "Groupe Scolaire Jacques PREVERT",
+                "Adresse": "Rue de l'Eglise (Oestres)",
+                "Code_postale": 2100,
+                "Ville": "Saint-Quentin",
+                "usage_principale": "",
+                "date_de_construction": "",
+                "nombre_de_batiments": "",
+                "nombre_de_niveaux": "",
+                "surface_totale": "",
+                "compacite": "",
+                "periode_d_occupation_des_locaux": "",
+                "hauteur_sous_plafond_moyenne": "",
+                "zone_climatique": "H1a",
+                "temp_exterieure_de_base": -7,
+                "orientation_principale": "",
+                "detail_des_surfaces": "",
+                "chauffage": "",
+                "ecs": "",
+                "renouvellement_d_air": "",
+                "remarques": "",
+                "plan": "",
+                "image": ""
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.257902265,
+                    49.82885813
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 26,
+                "type": "école",
+                "sub_category": 3,
+                "Categorie": "El??mentaire",
+                "nom": "Groupe Scolaire THELLIER DESJARDINS",
+                "Adresse": "1 rue de Flandre ",
+                "Code_postale": 2100,
+                "Ville": "Saint-Quentin",
+                "usage_principale": "",
+                "date_de_construction": "",
+                "nombre_de_batiments": "",
+                "nombre_de_niveaux": "",
+                "surface_totale": "",
+                "compacite": "",
+                "periode_d_occupation_des_locaux": "",
+                "hauteur_sous_plafond_moyenne": "",
+                "zone_climatique": "H1a",
+                "temp_exterieure_de_base": -7,
+                "orientation_principale": "",
+                "detail_des_surfaces": "",
+                "chauffage": "",
+                "ecs": "",
+                "renouvellement_d_air": "",
+                "remarques": "",
+                "plan": "",
+                "image": ""
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.274092078,
+                    49.84070523
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 27,
+                "type": "école",
+                "sub_category": 3,
+                "Categorie": "El??mentaire",
+                "nom": "Groupe Scolaire DAVID et MAIGRET ",
+                "Adresse": "106 rue de Normandie",
+                "Code_postale": 2100,
+                "Ville": "Saint-Quentin",
+                "usage_principale": "",
+                "date_de_construction": "",
+                "nombre_de_batiments": "",
+                "nombre_de_niveaux": "",
+                "surface_totale": "",
+                "compacite": "",
+                "periode_d_occupation_des_locaux": "",
+                "hauteur_sous_plafond_moyenne": "",
+                "zone_climatique": "H1a",
+                "temp_exterieure_de_base": -7,
+                "orientation_principale": "",
+                "detail_des_surfaces": "",
+                "chauffage": "",
+                "ecs": "",
+                "renouvellement_d_air": "",
+                "remarques": "",
+                "plan": "",
+                "image": ""
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.271028996,
+                    49.85619048
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 28,
+                "type": "école",
+                "sub_category": 4,
+                "Categorie": "Dessin",
+                "nom": "Groupe Scolaire Maurice-Quentin de la TOUR",
+                "Adresse": "1 rue Gabriel Girodon",
+                "Code_postale": 2100,
+                "Ville": "Saint-Quentin",
+                "usage_principale": "",
+                "date_de_construction": "",
+                "nombre_de_batiments": "",
+                "nombre_de_niveaux": "",
+                "surface_totale": "",
+                "compacite": "",
+                "periode_d_occupation_des_locaux": "",
+                "hauteur_sous_plafond_moyenne": "",
+                "zone_climatique": "H1a",
+                "temp_exterieure_de_base": -7,
+                "orientation_principale": "",
+                "detail_des_surfaces": "",
+                "chauffage": "",
+                "ecs": "",
+                "renouvellement_d_air": "",
+                "remarques": "",
+                "plan": "",
+                "image": ""
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.271028996,
+                    49.85619048
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 29,
+                "type": "école",
+                "sub_category": 2,
+                "Categorie": "Maternelle",
+                "nom": "Groupe Scolaire Benjamin Rouche",
+                "Adresse": "284 rue Jacques Blanchot",
+                "Code_postale": 2100,
+                "Ville": "Saint-Quentin",
+                "usage_principale": "",
+                "date_de_construction": "",
+                "nombre_de_batiments": "",
+                "nombre_de_niveaux": "",
+                "surface_totale": "",
+                "compacite": "",
+                "periode_d_occupation_des_locaux": "",
+                "hauteur_sous_plafond_moyenne": "",
+                "zone_climatique": "H1a",
+                "temp_exterieure_de_base": -7,
+                "orientation_principale": "",
+                "detail_des_surfaces": "",
+                "chauffage": "",
+                "ecs": "",
+                "renouvellement_d_air": "",
+                "remarques": "",
+                "plan": "",
+                "image": ""
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.271028996,
+                    49.85619135
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 30,
+                "type": "école",
+                "sub_category": 2,
+                "Categorie": "Maternelle",
+                "nom": "Groupe Scolaire Pauline KERGOMARD",
+                "Adresse": "Rue Charles Gomard",
+                "Code_postale": 2100,
+                "Ville": "Saint-Quentin",
+                "usage_principale": "",
+                "date_de_construction": "",
+                "nombre_de_batiments": "",
+                "nombre_de_niveaux": "",
+                "surface_totale": "",
+                "compacite": "",
+                "periode_d_occupation_des_locaux": "",
+                "hauteur_sous_plafond_moyenne": "",
+                "zone_climatique": "H1a",
+                "temp_exterieure_de_base": -7,
+                "orientation_principale": "",
+                "detail_des_surfaces": "",
+                "chauffage": "",
+                "ecs": "",
+                "renouvellement_d_air": "",
+                "remarques": "",
+                "plan": "",
+                "image": ""
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.278622329,
+                    49.85438598
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 31,
+                "type": "école",
+                "sub_category": 5,
+                "Categorie": "Musique",
+                "nom": "Ecole nationale de Musique - Conservatoire",
+                "Adresse": "51 rue d'Isle",
+                "Code_postale": 2100,
+                "Ville": "Saint-Quentin",
+                "usage_principale": "",
+                "date_de_construction": "",
+                "nombre_de_batiments": "",
+                "nombre_de_niveaux": "",
+                "surface_totale": "",
+                "compacite": "",
+                "periode_d_occupation_des_locaux": "",
+                "hauteur_sous_plafond_moyenne": "",
+                "zone_climatique": "H1a",
+                "temp_exterieure_de_base": -7,
+                "orientation_principale": "",
+                "detail_des_surfaces": "",
+                "chauffage": "",
+                "ecs": "",
+                "renouvellement_d_air": "",
+                "remarques": "",
+                "plan": "",
+                "image": ""
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.291486204,
+                    49.84444836
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,44 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 32,
+                "type_id": 1,
+                "sub_category": 5,
+                "Categorie": "Spectacle",
+                "nom": "La Manufacture",
+                "Adresse": "8 rue Paul Codos",
+                "Code_postale": 2100,
+                "Ville": "Saint-Quentin",
+                "usage_principale": "",
+                "date_de_construction": "",
+                "nombre_de_batiments": "",
+                "nombre_de_niveaux": "",
+                "surface_totale": "",
+                "compacite": "",
+                "periode_d_occupation_des_locaux": "",
+                "hauteur_sous_plafond_moyenne": "",
+                "zone_climatique": "",
+                "temp_exterieure_de_base": "",
+                "orientation_principale": "",
+                "detail_des_surfaces": "",
+                "chauffage": "",
+                "ecs": "",
+                "renouvellement_d_air": "",
+                "remarques": "",
+                "plan": "",
+                "image": "",
+                "url": "http://localhost/saint-quentin/model.html"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.270347714,
+                    49.85443095
+                ]
+            }
+        }
+    ]
+}

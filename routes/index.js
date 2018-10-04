@@ -4,7 +4,13 @@ var router = express.Router();
 var db = require('../queries');
 
 
+router.get('/', db.index);
+router.get('/dynamic', db.dynamic);
+router.get('/model', db.model);
+router.get('/management', db.management);
+
 router.get('/buildings', db.getAllBuildings);
+router.get('/getdata', db.getData);
 router.get('/geojson', db.getGeoJSON);
 router.get('/buildings/:id', db.getSingleBuilding);
 router.get('/create', db.create);

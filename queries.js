@@ -9,15 +9,41 @@ var pgp = require('pg-promise')(options);
 // Setup connection
 var username = "postgres" // sandbox username
 var password = "1234" // read only privileges on our table
-var host = "ancient-tundra-95051"
+var host = "localhost:5433"
 var database = "saint_quntin" // database name
-var connectionString = "postgres://whtpqluhyozweu:8c5ba5e1c23879e5d644b0eb41e1439bfacbcc3ce9113f0e250d3130d30a9a0c@ec2-54-243-147-162.compute-1.amazonaws.com:5432/dd5brmmo1hjtsg"; // Your Database Connection
+var connectionString = "postgres://" + username + ":" + password + "@" + host + "/" + database; // Your Database Connection
+//var connectionString = "postgres://whtpqluhyozweu:8c5ba5e1c23879e5d644b0eb41e1439bfacbcc3ce9113f0e250d3130d30a9a0c@ec2-54-243-147-162.compute-1.amazonaws.com:5432/dd5brmmo1hjtsg"; // Your Database Connection
+
 var db = pgp(connectionString);
 
 // add query functions
 
 
 const { Client, Query } = require('pg')
+
+function index(req, res, next) {
+  res.render('index', {
+    title: "Home"
+  })
+}
+
+function dynamic(req, res, next) {
+  res.render('dynamic', {
+    title: "Dynamic data"
+  })
+}
+
+function model(req, res, next) {
+  res.render('model', {
+    title: "3D Model"
+  })
+}
+
+function management(req, res, next) {
+  res.render('management', {
+    title: "Manage des halls"
+  })
+}
 
 function getAllBuildings(req, res, next) {
   db.any('select * from building')
@@ -38,11 +64,23 @@ function create(req, res, next) {
       })
 }
 
+function getData(req, res, next) {
+  var building_query = "SELECT row_to_json(fc) FROM ( SELECT 'FeatureCollection' As type, array_to_json(array_agg(f)) As features FROM (SELECT 'Feature' As type, ST_AsGeoJSON(lg.geom)::json As geometry, row_to_json((id, nom, code_postal)) As properties FROM building As lg) As f) As fc";
+  var client = new Client(connectionString);
+  client.connect();
+  var query = client.query(new Query(building_query)); // Run our Query
+  query.on("row", function (row, result) {
+    result.addRow(row);
+  });
+  query.on("end", function (result) {
+    res.send(result.rows[0].row_to_json);
+    res.end();
+  });
+}
+
+
 function getGeoJSON(req, res, next) {
-  var building_query = "SELECT row_to_json(fc) FROM ( SELECT 'FeatureCollection' As type," +
-    " array_to_json(array_agg(f)) As features FROM (SELECT 'Feature' As type, " +
-    " ST_AsGeoJSON(lg.geom)::json As geometry, " +
-    "row_to_json((id, street_name)) As properties FROM building As lg) As f) As fc";
+  var building_query = "SELECT row_to_json(fc) FROM ( SELECT 'FeatureCollection' As type, array_to_json(array_agg(f)) As features FROM (SELECT 'Feature' As type, ST_AsGeoJSON(lg.geom)::json As geometry, row_to_json((id, nom, code_postal)) As properties FROM building As lg) As f) As fc";
   var client = new Client(connectionString);
   client.connect();
   var query = client.query(new Query(building_query)); // Run our Query
@@ -126,6 +164,11 @@ function removeBuilding(req, res, next) {
     });
 }
 module.exports = {
+  index: index,
+  dynamic: dynamic,
+  model: model,
+  management: management,
+  getData: getData,
   getAllBuildings: getAllBuildings,
   getGeoJSON: getGeoJSON,
   getSingleBuilding: getSingleBuilding,

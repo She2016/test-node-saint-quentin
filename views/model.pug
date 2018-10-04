@@ -1,0 +1,12 @@
+extends layoutt
+	
+block content
+  #model.col-lg-12
+    a.link(href='/dynamic') Dynamic data
+    iframe(src='https://myhub.autodesk360.com/ue2d47c4e/shares/public/SHabee1QT1a327cf2b7adb5133b99e427b82?mode=embed' id="modelframe" style='width:100%;height:800px;' allowfullscreen='true' webkitallowfullscreen='true' mozallowfullscreen='true' frameborder='0')
+  
+  script.
+    $(window).resize(function () {
+      $('#modelframe').height($(window).height() - 160);
+    });
+    $(window).trigger('resize');
