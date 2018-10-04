@@ -12,7 +12,7 @@ var password = "1234" // read only privileges on our table
 var host = "localhost:5433"
 var database = "saint_quntin" // database name
 //var connectionString = "postgres://" + username + ":" + password + "@" + host + "/" + database; // Your Database Connection
-var connectionString = "postgres://whtpqluhyozweu:8c5ba5e1c23879e5d644b0eb41e1439bfacbcc3ce9113f0e250d3130d30a9a0c@ec2-54-243-147-162.compute-1.amazonaws.com:5432/dd5brmmo1hjtsg"; // Your Database Connection
+var connectionString = "postgres://dtnshwkgnxfrlm:33f3ba5b0bceca86fe00ee730bbc59a3bf8b5176cb1e638c5128c1f6220b07a5@ec2-50-17-225-140.compute-1.amazonaws.com:5432/de5u8pdn8nr8tn"; // Your Database Connection
 
 var db = pgp(connectionString);
 
