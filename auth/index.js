@@ -27,7 +27,6 @@ router.post('/signup', (req, res, next) => {
 		User
 			.getOneByEmail(req.body.email)
 			.then(user => {
-				console.log('user', user);
 				//If user not found
 				if (!user) {
 					// This is unique email

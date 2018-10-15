@@ -18,7 +18,6 @@ $(() => {
 					localStorage.setItem('user_id',result.id) 
 					window.location = `/users/${result.id}`
 				}).catch(error => {
-					console.log(error)
 					const $errorMessage = $('#errorMessage')
 					$errorMessage.text(error.responseJSON.message)
 					$errorMessage.show()
@@ -30,7 +29,6 @@ $(() => {
 					localStorage.setItem('user_id',result.id) 
 					window.location = `/users/${result.id}`
 				}).catch(error => {
-					console.log(error)
 					const $errorMessage = $('#errorMessage')
 					$errorMessage.text(error.responseJSON.message)
 					$errorMessage.show()
