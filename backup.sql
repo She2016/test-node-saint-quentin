@@ -281,11 +281,67 @@ ALTER TABLE public.building_type_id_seq OWNER TO postgres;
 ALTER SEQUENCE public.building_type_id_seq OWNED BY public.building_type.id;
 
 
+SET default_with_oids = false;
+
+--
+-- Name: user_types; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.user_types (
+    type_name character varying(50) NOT NULL
+);
+
+
+ALTER TABLE public.user_types OWNER TO postgres;
+
+--
+-- Name: users; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.users (
+    id integer NOT NULL,
+    name character varying(50) NOT NULL,
+    email character varying(50) NOT NULL,
+    password text NOT NULL,
+    type character varying(50)
+);
+
+
+ALTER TABLE public.users OWNER TO postgres;
+
+--
+-- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.users_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.users_id_seq OWNER TO postgres;
+
+--
+-- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.users_id_seq OWNED BY public.users.id;
+
+
 --
 -- Name: building_type id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.building_type ALTER COLUMN id SET DEFAULT nextval('public.building_type_id_seq'::regclass);
+
+
+--
+-- Name: users id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_id_seq'::regclass);
 
 
 --
@@ -354,6 +410,28 @@ COPY public.spatial_ref_sys (srid, auth_name, auth_srid, srtext, proj4text) FROM
 
 
 --
+-- Data for Name: user_types; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.user_types (type_name) FROM stdin;
+admin
+user
+\.
+
+
+--
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.users (id, name, email, password, type) FROM stdin;
+1	Sheyar	sheyar@gamil.com	123456	admin
+3	Jamil	jamil@gamil.com	$2a$10$cmfIla27yqdm2dn1xD3dQ.31EjQ8ZqpV/3LmFCYdEK81XdTzBMHFG	\N
+4	you	you@gamil.com	$2a$10$G.aCuHtESvLa/lVpI63tYOxfwxymZul.VRqfR7.cbk7KSw8qc8GGi	user
+5	Four	for@gamil.com	$2a$10$LHa59gnc0B83eA8Y8MQnmOJoK5ScukHJVumpQpky06TdIlw1RzI/2	user
+\.
+
+
+--
 -- Data for Name: geocode_settings; Type: TABLE DATA; Schema: tiger; Owner: postgres
 --
 
@@ -409,6 +487,13 @@ SELECT pg_catalog.setval('public.building_type_id_seq', 1, false);
 
 
 --
+-- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.users_id_seq', 5, true);
+
+
+--
 -- Name: building building_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -425,10 +510,34 @@ ALTER TABLE ONLY public.building_type
 
 
 --
+-- Name: user_types user_types_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.user_types
+    ADD CONSTRAINT user_types_pkey PRIMARY KEY (type_name);
+
+
+--
+-- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.users
+    ADD CONSTRAINT users_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: building_gist; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX building_gist ON public.building USING gist (geom);
+
+
+--
+-- Name: users fk_user_type; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.users
+    ADD CONSTRAINT fk_user_type FOREIGN KEY (type) REFERENCES public.user_types(type_name);
 
 
 --

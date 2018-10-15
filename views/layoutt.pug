@@ -65,7 +65,7 @@ html
         
         if($('#login').text() != 'Login') {
           localStorage.removeItem('user_id')
-          $.get(`http://localhost:3000/auth/logout`).then(result => {
+          $.get(`/auth/logout`).then(result => {
             window.location = `/`
           })
         } else {

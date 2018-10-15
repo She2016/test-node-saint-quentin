@@ -45,7 +45,7 @@ router.post('/signup', (req, res, next) => {
 							.create(user).then(id => {
 								const isSecure = req.app.get('env') != 'development'
 								res.cookie('user_id', user.id, {
-									//httpOnly: true,
+									httpOnly: true,
 									signed: true,
 									secure: isSecure
 								})
@@ -79,7 +79,7 @@ router.post('/login', (req, res, next) => {
 							// Setting the 'set_cookie' header
 							const isSecure = req.app.get('env') != 'development'
 							res.cookie('user_id', user.id, {
-								//httpOnly: true,
+								httpOnly: true,
 								signed: true,
 								secure: isSecure
 							})
