@@ -43,6 +43,12 @@ router.post('/signup', (req, res, next) => {
 						// Insert The user in the DB
 						User
 							.create(user).then(id => {
+								const isSecure = req.app.get('env') != 'development'
+								res.cookie('user_id', user.id, {
+									//httpOnly: true,
+									signed: true,
+									secure: isSecure
+								})
 								res.json({
 									id,
 									message: 'it works'
@@ -73,7 +79,7 @@ router.post('/login', (req, res, next) => {
 							// Setting the 'set_cookie' header
 							const isSecure = req.app.get('env') != 'development'
 							res.cookie('user_id', user.id, {
-								httpOnly: true,
+								//httpOnly: true,
 								signed: true,
 								secure: isSecure
 							})
