@@ -1,20 +1,8 @@
-var promise = require('bluebird');
+const knex = require('./connection');
 
-var options = {
-  // Initialization Options
-  promiseLib: promise
-};
-
-var pgp = require('pg-promise')(options);
-// Setup connection
-var username = "postgres" // sandbox username
-var password = "1234" // read only privileges on our table
-var host = "localhost:5433"
-var database = "saint_quntin" // database name
-//var connectionString = "postgres://" + username + ":" + password + "@" + host + "/" + database; // Your Database Connection
-var connectionString = "postgres://dtnshwkgnxfrlm:33f3ba5b0bceca86fe00ee730bbc59a3bf8b5176cb1e638c5128c1f6220b07a5@ec2-50-17-225-140.compute-1.amazonaws.com:5432/de5u8pdn8nr8tn"; // Your Database Connection
-
-var db = pgp(connectionString);
+var building_query = "SELECT jsonb_build_object('type', 'FeatureCollection','features', jsonb_agg(features.feature)) FROM ( SELECT jsonb_build_object('type', 'Feature','id', id,'geometry', ST_AsGeoJSON(geom)::jsonb,'properties', to_jsonb(inputs) - 'id' - 'geom') AS feature FROM (SELECT * FROM building) inputs) features";
+  
+//var db = pgp(connectionString);
 
 // add query functions
 
@@ -26,27 +14,29 @@ function index(req, res, next) {
     title: "Home"
   })
 }
-
 function dynamic(req, res, next) {
   res.render('dynamic', {
     title: "Dynamic data"
   })
 }
-
 function model(req, res, next) {
   res.render('model', {
     title: "3D Model"
   })
 }
-
 function management(req, res, next) {
   res.render('management', {
     title: "Manage des halls"
   })
 }
+function schedule(req, res, next) {
+  res.render('schedule', {
+    title: "Schedule"
+  })
+}
 
 function getAllBuildings(req, res, next) {
-  db.any('select * from building')
+  knex.select().from('building')
     .then(function (data) {
       res.render('buildings', {
         title: "All Buildings",
@@ -64,32 +54,29 @@ function create(req, res, next) {
       })
 }
 
+// function getData(req, res, next) {
+  
+//   knex.select().from('building').then(function(data) {
+//     res.send(data);
+//   });
+// }
+
 function getData(req, res, next) {
-  var building_query = "SELECT row_to_json(fc) FROM ( SELECT 'FeatureCollection' As type, array_to_json(array_agg(f)) As features FROM (SELECT 'Feature' As type, ST_AsGeoJSON(lg.geom)::json As geometry, row_to_json((id, nom, code_postal)) As properties FROM building As lg) As f) As fc";
-  var client = new Client(connectionString);
-  client.connect();
-  var query = client.query(new Query(building_query)); // Run our Query
-  query.on("row", function (row, result) {
-    result.addRow(row);
-  });
-  query.on("end", function (result) {
-    res.send(result.rows[0].row_to_json);
+  
+  knex.raw(building_query).on('query-error', function(error, obj) {
+    console.log(error);
+    //result.addRow(row);
+  }).then(function (result) {
+    res.send(result.rows[0].jsonb_build_object);
     res.end();
   });
 }
 
 
 function getGeoJSON(req, res, next) {
-  var building_query = "SELECT row_to_json(fc) FROM ( SELECT 'FeatureCollection' As type, array_to_json(array_agg(f)) As features FROM (SELECT 'Feature' As type, ST_AsGeoJSON(lg.geom)::json As geometry, row_to_json((id, nom, code_postal)) As properties FROM building As lg) As f) As fc";
-  var client = new Client(connectionString);
-  client.connect();
-  var query = client.query(new Query(building_query)); // Run our Query
-  query.on("row", function (row, result) {
-    result.addRow(row);
-  });
-  // Pass the result to the map page
-  query.on("end", function (result) {
-    var data = result.rows[0].row_to_json // Save the JSON as variable data
+  //var building_query = "SELECT row_to_json(fc) FROM ( SELECT 'FeatureCollection' As type, array_to_json(array_agg(f)) As features FROM (SELECT 'Feature' As type, ST_AsGeoJSON(lg.geom)::json As geometry, row_to_json((id, nom, code_postal)) As properties FROM building As lg) As f) As fc";
+  knex.raw(building_query).then((result) => {
+    var data = result.rows[0].jsonb_build_object // Save the JSON as variable data
     res.render('map', {
       title: "Express API", // Give a title to our page
       jsonData: data // Pass data to the View
@@ -99,7 +86,7 @@ function getGeoJSON(req, res, next) {
 
 function getSingleBuilding(req, res, next) {
   var BuildingID = parseInt(req.params.id);
-  db.one('select * from building where id = $1', BuildingID)
+  knex('building').where('id', BuildingID).first()
     .then(function (data) {
       res.status(200)
         .json({
@@ -168,6 +155,7 @@ module.exports = {
   dynamic: dynamic,
   model: model,
   management: management,
+  schedule: schedule,
   getData: getData,
   getAllBuildings: getAllBuildings,
   getGeoJSON: getGeoJSON,

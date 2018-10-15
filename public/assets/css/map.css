@@ -1,37 +1,124 @@
 #mapid {
-    height: 800px;
+	height: 800px;
 }
 
 #map {
-    width: 100%;
-    height: 800px;
+	width: 100%;
+	height: 800px;
 }
 
 #information1 {
-    height: 600px;
-    overflow: auto;
+	height: 600px;
+	overflow: auto;
 }
 
 .leaflet-tooltip.my-labels {
-    background-color: transparent;
-    border: transparent;
-    box-shadow: none;
-    font-weight: bold;
-    font-size: 12px;
+	background-color: transparent;
+	border: transparent;
+	box-shadow: none;
+	font-weight: bold;
+	font-size: 12px;
 }
 
 .big-size {
-    font-size: 4em !important;
+	font-size: 4em !important;
 }
 
 .images {
-    width: 52%;
+	width: 100%;
 }
 
 #model .link {
-    position: absolute;
-    right: 18%;
-    color: #343a40;
-    font-size: 20px;
-    font-weight: bold;
+	position: absolute;
+	right: 18%;
+	color: #343a40;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.login-logo {
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+.login-logo span {
+	color: #ffffff;
+	font-size: 24px;
+}
+
+.login-content {
+	max-width: 540px;
+	margin: 6vh auto;
+}
+
+.login-form {
+	background: #ffffff;
+	padding: 30px 30px 20px;
+	border-radius: 2px;
+}
+
+.login-form h4 {
+	color: #878787;
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.login-form .checkbox {
+	color: #878787;
+}
+
+.login-form .checkbox label {
+	text-transform: none;
+}
+
+.login-form .btn {
+	width: 100%;
+	text-transform: uppercase;
+	font-size: 14px;
+	padding: 15px;
+	border: 0px;
+}
+
+.login-form label {
+	color: #878787;
+	text-transform: uppercase;
+}
+
+.login-form label a {
+	color: #ff2e44;
+}
+
+.social-login-content {
+	margin: 0px -30px;
+	padding: 30px 0px;
+}
+
+.social-button {
+	padding: 0 30px;
+}
+
+.social-button .facebook {
+	background: #3b5998;
+	color: #fff;
+}
+
+.social-button .facebook:hover {
+	background: #344e86;
+}
+
+.social-button .twitter {
+	background: #00aced;
+	color: #fff;
+}
+
+.social-button .twitter:hover {
+	background: #0099d4;
+}
+
+.social-button i {
+	padding: 19px;
+}
+
+.register-link a {
+	color: #ff2e44;
 }

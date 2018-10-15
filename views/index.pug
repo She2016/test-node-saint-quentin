@@ -2,7 +2,7 @@ extends layoutt
 block content
   .row.bg-dark
     .col-lg-12.border-top.border-white
-      h1.text-center.text-white.font-weight-bold.big-size
+      h1.text-center.text-white.font-weight-bold
         img(height='70' src='images/Saint-Quentin2.png')
         |                     Saint-Quentin Smart City
   .row.bg-dark
@@ -12,11 +12,18 @@ block content
       #information
         .card
           .card-header
-            | Accuiel
+            | Accueil
             button.close(type='button' aria-label='Close')
               span(aria-hidden='true') &times;
           #information1.card-body
+            p(class='display-1 text-center') Bienvenue chez Saint-Quentin
+            
+
   script.
+    if(localStorage.getItem('user_id')) {
+      window.location = `/users/${localStorage.getItem('user_id')}`
+    }
+	  
     $(window).resize(function () {
       $('#mapid').height($(window).height() - 160);
       $('#information1').height($(window).height() - 250);
@@ -158,18 +165,122 @@ block content
     }
 
     function dosomething() {
-      var customPopup = '<h3><a target="_blank" href="/model">Le model 3D</a></h3>' +
-        '<a target="_blank" href="/model"><img class="images" src="images/model.png" /></a>' +
-        '<hr>' +
-        '<h3><a target="_blank" href="/dynamic">Temp réel</a></h3>' +
-        '<a target="_blank" href="/dynamic"><img class="images" src="images/lamanufacture.png" /></a>';
-      $("#information1").html(customPopup);
+      //- var customPopup = '<h3 class="text-center"><a target="_blank" href="/model">Le model 3D</a></h3>' +
+      //-   '<a target="_blank" href="/model"><img class="images" src="images/model.png" /></a>' +
+      //-   '<hr>' +
+      //-   '<h3><a target="_blank" href="/dynamic">Instrumentation</a></h3>' +
+      //-   '<a target="_blank" href="/dynamic"><img class="images" src="images/lamanufacture.png" /></a>';
+      //- $("#information1").html(customPopup);
+      var template = $('#figures').html();
+      html = Mustache.render(template, {
+            title: "Registeration",
+        });
+      $('#information1').html(html);
     }
+
     $('.close').on('click', function () {
       $("#information").css("display", "none");
     });
+
+    function changeform() {
+      var x = $("#regorlog").text();
+      var html;
+      var template = $('#template').html();
+      if (x == 'Sign in') {
+          html = Mustache.render(template, {
+            title: "Log in",
+            btn: "Log in",
+            account: "Create an account",
+            face: "Log in with Facebook",
+            twitter: "Log in with Twitter",
+            formid: "login"
+        });
+      } else {
+          html = Mustache.render(template, {
+            title: "Registeration",
+            btn: "Register",
+            account: "Sign in",
+            face: "Register with Facebook",
+            twitter: "Register in with Twitter",
+            formid: "signup"
+          });
+      }
+      $('#information1').html(html);
+    }
+
     map.on('click', function (e) {
       //console.log(e.latlng);
       map.setView(e.latlng, 15);
     });
+
+    
+  script#template(type='text/template')
+    .sufee-login.d-flex.align-content-center.flex-wrap
+      .container
+        .login-content
+          .login-logo
+            h2(id='formhead') {{title}}
+          .login-form
+            .alert.alert-danger(role='alert' id='errorMessage' style='display:none')
+              strong Oh snap!
+              |  Change a few things up and try submitting again.
+            form(id='{{formid}}')
+              .form-group
+                label User Name
+                input.form-control(type='text' id='name' placeholder='User Name' required)
+              .form-group
+                label Email address
+                input.form-control(type='email' id='email' placeholder='Email' required)
+              .form-group
+                label Password
+                input.form-control(type='password' id='password' placeholder='keyboard cat' required)
+              .checkbox
+                label
+                  input(type='checkbox')
+                  |  Agree the terms and policy
+              button.btn.btn-primary.btn-flat.m-b-30.m-t-30(type="submit" id='regbtn') {{btn}}
+              .social-login-content
+                .social-button
+                  button.btn.social.facebook.btn-flat.btn-addon.mb-3(type='button') 
+                    i.ti-facebook
+                    | {{face}}
+                  button.btn.social.twitter.btn-flat.btn-addon.mt-2(type='button') 
+                    i.ti-twitter
+                    | {{twitter}}
+              .register-link.m-t-15.text-center
+                p
+                  | Already have account ? 
+                  a(href='#' id='regorlog' onclick='changeform()') {{account}}
+
+    script.
+      var login = '/javascripts/login.js'
+      $.getScript(login);
+
+  script#figures(type='text/template')
+    .row  
+      .col-lg-6
+        h3.text-center
+          a(target='_blank' href='/model') Le model 3D
+        a(target='_blank' href='/model')
+          img.images(src='images/model.png')
+      .col-lg-6
+        h3.text-center
+          a(target='_blank' href='/model') Le model 3D
+        a(target='_blank' href='/model')
+          img.images(src='images/model.png')
+    hr
+    .row
+      .col-lg-6
+        h3.text-center
+          a(target='_blank' href='/dynamic') Instrumentation
+        a(target='_blank' href='/dynamic')
+          img.images(src='images/lamanufacture.png')
+      .col-lg-6
+        h3.text-center
+          a(target='_blank' href='/dynamic') Instrumentation
+        a(target='_blank' href='/dynamic')
+          img.images(src='images/lamanufacture.png')
+
+    
+  
 

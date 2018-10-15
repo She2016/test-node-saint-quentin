@@ -1,13 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
-var db = require('../queries');
+var db = require('../db/queries');
 
 
 router.get('/', db.index);
 router.get('/dynamic', db.dynamic);
 router.get('/model', db.model);
 router.get('/management', db.management);
+router.get('/schedule', db.schedule);
 
 router.get('/buildings', db.getAllBuildings);
 router.get('/getdata', db.getData);

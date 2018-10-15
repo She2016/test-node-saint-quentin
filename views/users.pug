@@ -1,0 +1,37 @@
+extends layoutt
+block content
+  .content.mt-3
+    .animated.fadeIn
+      .row
+        .col-md-12
+          .card
+            .card-header
+              strong.card-title All Users
+            .card-body
+              table#bootstrap-data-table.table.table-striped.table-bordered
+                thead
+                  tr
+                    th Nom
+                    th Email
+                    th Type
+                tbody
+                  
+                    tr
+                      td !{JSON.parse(jsonData).name}
+                      td #{JSON.parse(jsonData).email}
+                      td #{JSON.parse(jsonData).type}
+                      td 
+                        a.btn-outline-success(href='/delete')
+                          i.fa.fa-edit
+  script.
+    $(document).ready(function() {
+      var url = document.URL;
+      var id = url.substring(url.lastIndexOf('/') + 1);
+      
+      if(localStorage.getItem('user_id') != id) {
+      window.location = `/users/${localStorage.getItem('user_id')}`
+    }
+    })
+    
+                
+  

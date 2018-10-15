@@ -5,7 +5,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-//var usersRouter = require('./routes/users');
+var usersRouter = require('./routes/users');
+var authRouter = require('./auth');
+var authMiddleware = require('./auth/middleware');
 
 var app = express();
 
@@ -16,11 +18,12 @@ app.set('view engine', 'pug');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(cookieParser('keyboard_cat'));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/auth', authRouter);
 app.use('/', indexRouter);
-//app.use('/users', usersRouter);
+app.use('/users', authMiddleware.ensureLoggedIn, usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -33,9 +36,9 @@ app.use(function (req, res, next) {
 if (app.get('env') === 'development') {
   app.use(function (err, req, res, next) {
     res.status(err.code || 500)
-      .json({
-        status: 'error',
-        message: err
+    res.json({
+        message: err.message,
+        error: req.app.get('env') === 'development' ? err : {}
       });
   });
 }
@@ -43,10 +46,10 @@ if (app.get('env') === 'development') {
 // production error handler
 // no stacktraces leaked to user
 app.use(function (err, req, res, next) {
-  res.status(err.status || 500)
-    .json({
-      status: 'error',
-      message: err.message
+  res.status(err.status || res.statusCode || 500)
+  res.json({
+      message: err.message,
+      error: req.app.get('env') === 'development' ? err : {}
     });
 });
 
