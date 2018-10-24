@@ -1,0 +1,16 @@
+doctype html
+head
+  script(src='https://cdn-webgl.wrld3d.com/wrldjs/dist/latest/wrld.js')
+  link(href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.1/leaflet.css' rel='stylesheet')
+div(style='position: relative')
+  #map(style='height: 800px')
+  script.
+    var map = L.Wrld.map("map", "bf4d6873c198daa52c5ffac5317a9fdb", {
+    center: [50.6081912, 3.1385841],
+    zoom: 16
+    });
+    setTimeout(function() {
+    map.setView([50.6081912, 3.1385841], 19, {
+    animate: false
+    });
+    }, 5000);

@@ -19,17 +19,7 @@ router.get('/model', (req, res, next) => {
   })
 });
 
-router.get('/management', (req, res, next) => {
-  res.render('management', {
-    title: "Manage des halls"
-  })
-});
 
-router.get('/schedule', (req, res, next) => {
-  res.render('schedule', {
-    title: "Schedule"
-  })
-});
 
 
 

@@ -1,3 +1,7 @@
+//Submit login or registration form using AJAX
+//Store a user information in the sessionStorage
+//Display Error messages if exists
+
 $(() => {
 	$('form').submit((event) => {
 		event.preventDefault()
@@ -47,7 +51,7 @@ function setLocalStorage(user) {
 	if (user.type == 'admin') {
 		window.location = `/buildings`
 	} else {
-		window.location = `/users/${user.id}`
+		window.location = `/`
 	}
 }
 
