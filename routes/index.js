@@ -1,23 +1,36 @@
 var express = require('express');
 var router = express.Router();
 
-var db = require('../db/queries');
+router.get('/', (req, res, next) => {
+  res.render('index', {
+    title: "Home"
+  })
+})
 
+router.get('/dynamic', (req, res, next) => {
+  res.render('dynamic', {
+    title: "Dynamic data"
+  })
+});
 
-router.get('/', db.index);
-router.get('/dynamic', db.dynamic);
-router.get('/model', db.model);
-router.get('/management', db.management);
-router.get('/schedule', db.schedule);
+router.get('/model', (req, res, next) => {
+  res.render('model', {
+    title: "3D Model"
+  })
+});
 
-router.get('/buildings', db.getAllBuildings);
-router.get('/getdata', db.getData);
-router.get('/geojson', db.getGeoJSON);
-router.get('/buildings/:id', db.getSingleBuilding);
-router.get('/create', db.create);
-router.post('/buildings', db.createBuilding);
-router.put('/buildings/:id', db.updateBuilding);
-router.delete('/buildings/:id', db.removeBuilding);
+router.get('/management', (req, res, next) => {
+  res.render('management', {
+    title: "Manage des halls"
+  })
+});
+
+router.get('/schedule', (req, res, next) => {
+  res.render('schedule', {
+    title: "Schedule"
+  })
+});
+
 
 
 module.exports = router;

@@ -1,4 +1,4 @@
-extends layoutt
+extends templates/layoutt
 block content
   .row.bg-dark
     .col-lg-12.border-top.border-white
@@ -8,15 +8,95 @@ block content
   .row.bg-dark
     .col-lg-7
       #mapid
-    .col-lg-5
-      #information
-        .card
-          .card-header
-            | Accueil
-            button.close(type='button' aria-label='Close')
-              span(aria-hidden='true') &times;
-          #information1.card-body
-            p(class='display-1 text-center') Bienvenue à Saint-Quentin
+    #info.col-lg-5
+      //- .row
+      //-   #weather.col-lg-12
+      //-     a.weatherwidget-io(href='https://forecast7.com/fr/49d853d29/saint-quentin/' data-label_1='SAINT-QUENTIN' data-label_2='WEATHER' data-theme='original') SAINT-QUENTIN WEATHER
+      //- br
+      .row
+        .col-lg-12
+          #accueil.card
+            .card-header
+              | Accueil
+              button.close(type='button' aria-label='Close')
+                span(aria-hidden='true') &times;
+            #information1.card-body
+              article
+                h2(class='text-center') Bienvenue à Saint-Quentin Smart City
+                p(class="text-justify")
+                | Dans le but d’améliorer le service rendu à ses usagers, 
+                | de réaliser des économies sur les couts de fonctionnement et afin de créer un environnement collectif propice aux échanges,
+                | à la mutualisation et à l’innovation, La Ville de Saint-Quentin a engagé une démarche Smart City.
+                | Le projet vise à donner de la cohérence, à renforcer et à impulser une  démarche  collective.
+              br
+              br
+              .row
+                .col-lg-12
+                  .modal-header
+                    h4 Join Our Newsletter
+                  .modal-body
+                    .alert.alert-success(role='alert' id='successMessage' style='display:none')
+                      strong Oh Success!
+                    .alert.alert-danger(role='alert' id='errorMessage' style='display:none')
+                      strong Oh Error!
+                    p
+                      | Subscribe our newsletter to receive the latest news and exclusive offers every week. No spam.
+                    form.form-inline(id='newsletter')
+                      .form-group.mb-2
+                        label.sr-only(for='staticEmail2') Email
+                        input#staticEmail2.form-control-plaintext(type='text' readonly='' value='Please enter youe email')
+                      .form-group.mx-sm-3.mb-2
+                        label.sr-only(for='inputPassword2') Email
+                        input.form-control(type='email' id='newsemail' placeholder='Email' required)
+                      button.btn.btn-primary.mb-2(type='submit') Confirm
+                
+      #virtuelle.modal.fade(role='dialog')
+        .modal-dialog.modal-lg
+          // Modal content
+          .modal-content
+            .modal-header
+              h4.modal-title Visite virtuelle
+              button.close(type='button' data-dismiss='modal') &times;
+            .modal-body
+              .row
+                .col-lg-6.border-right.border-dark
+                  h3.text-center
+                    a(target='_blank' href='/model') Modéle 3D
+                  a(target='_blank' href='/model')
+                    img.images(src='images/model.png')
+                
+                .col-lg-6
+                  h3.text-center
+                    a(target='_blank' href='/dynamic') Paraméters de confort
+                  a(target='_blank' href='/dynamic')
+                    img.images(src='images/lamanufacture.png')
+            .modal-footer
+              button.btn.btn-default(type='button' data-dismiss='modal') Férme
+
+      #catalogue.modal.fade(role='dialog')
+        .modal-dialog.modal-lg
+          // Modal content
+          .modal-content
+            .modal-header
+              h4.modal-title Programmation et Evenement
+              button.close(type='button' data-dismiss='modal') &times;
+            .modal-body
+              .row
+                .col-lg-6.border-right.border-dark
+                  h5.text-center
+                    a(target='_blank' href='https://fr.calameo.com/read/0048732463eac56a6e78d') Catalogue
+                  br
+                  a(target='_blank' href='https://fr.calameo.com/read/0048732463eac56a6e78d')
+                    img.images(src='images/Catalogue.png')
+                
+                .col-lg-6
+                  h3.text-center
+                    a(target='_blank' href='http://www.saint-quentin.fr/1674-la-manufacture.htm') Billetterie
+                  a(target='_blank' href='http://www.saint-quentin.fr/1674-la-manufacture.htm')
+                    img.images(src='images/calendaricon.png')
+            .modal-footer
+              button.btn.btn-default(type='button' data-dismiss='modal') Férme
+                
   script.
     var mapConfiguration = '/javascripts/mapConfiguration.js'
     $.getScript(mapConfiguration);
@@ -26,6 +106,7 @@ block content
       .container
         .login-content
           .login-logo
+            p(class='h1 text-center') Bienvenue à Saint-Quentin
             h2(id='formhead') {{title}}
           .login-form
             .alert.alert-danger(role='alert' id='errorMessage' style='display:none')
@@ -51,9 +132,6 @@ block content
                   button.btn.social.facebook.btn-flat.btn-addon.mb-3(type='button') 
                     i.ti-facebook
                     | {{face}}
-                  button.btn.social.twitter.btn-flat.btn-addon.mt-2(type='button') 
-                    i.ti-twitter
-                    | {{twitter}}
               .register-link.m-t-15.text-center
                 p
                   | Already have account ? 
@@ -62,31 +140,40 @@ block content
     script.
       var login = '/javascripts/login.js'
       $.getScript(login);
+    script.
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+    
 
-  script#figures(type='text/template')
+  script#figures(type='text/template')        
     .row  
       .col-lg-6
         h3.text-center
-          a(target='_blank' href='/model') Le model 3D
-        a(target='_blank' href='/model')
+          a(target='_blank' href='#' data-toggle='modal' data-target='#virtuelle') Visite virtuelle
+        a(target='_blank' href='#' data-toggle='modal' data-target='#virtuelle')
           img.images(src='images/model.png')
       .col-lg-6
-        h3.text-center
-          a(target='_blank' href='https://fr.calameo.com/read/0048732463eac56a6e78d') Catalogue
-        a(target='_blank' href='https://fr.calameo.com/read/0048732463eac56a6e78d')
+        h5.text-center
+          a(target='_blank' href='#' data-toggle='modal' data-target='#catalogue') Programmation et Evenement
+        a(target='_blank' href='#' data-toggle='modal' data-target='#catalogue')
           img.images(src='images/Catalogue.png')
     hr
     .row
-      .col-lg-6
-        h3.text-center
-          a(target='_blank' href='/dynamic') Instrumentation
-        a(target='_blank' href='/dynamic')
-          img.images(src='images/lamanufacture.png')
-      .col-lg-6
-        h3.text-center
-          a(target='_blank' href='http://www.saint-quentin.fr/1674-la-manufacture.htm') Billetterie
-        a(target='_blank' href='http://www.saint-quentin.fr/1674-la-manufacture.htm')
-          img.images(src='images/calendaricon.png')
+      .col-lg-12
+        .modal-header
+          h4 Join Our Newsletter
+        .modal-body
+          p
+            | Subscribe our newsletter to receive the latest news and exclusive offers every week. No spam.
+          form.form-inline(action='#' method='post')
+            .form-group.mb-2
+              label.sr-only(for='staticEmail2') Email
+              input#staticEmail2.form-control-plaintext(type='text' readonly='' value='Please enter youe email')
+            .form-group.mx-sm-3.mb-2
+              label.sr-only(for='inputPassword2') Email
+              input#inputPassword2.form-control(type='text' placeholder='Email')
+            button.btn.btn-primary.mb-2(type='submit') Confirm
+
+    
 
     
   

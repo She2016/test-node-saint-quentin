@@ -1,5 +1,5 @@
 #mapid {
-	height: 800px;
+	height: calc(100vh - 145px);
 }
 
 #map {
@@ -7,9 +7,14 @@
 	height: 800px;
 }
 
+#info {
+	height: calc(100vh - 145px);
+}
+
+
 #information1 {
-	height: 600px;
-	overflow: auto;
+	overflow-x: hidden;
+	overflow-y:auto;
 }
 
 .leaflet-tooltip.my-labels {
@@ -48,7 +53,7 @@
 
 .login-content {
 	max-width: 540px;
-	margin: 6vh auto;
+	margin: 2vh auto;
 }
 
 .login-form {

@@ -11,5 +11,8 @@ module.exports = {
     return knex('users').insert(user, 'id').then(ids => {
       return ids[0]
     })
+  },
+  getAllUsers: function() {
+    return knex.select().table('users')
   }
 }

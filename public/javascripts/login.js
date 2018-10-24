@@ -15,28 +15,22 @@ $(() => {
 		if (formType == 'login') {
 			login(user)
 				.then(result => {
-					localStorage.setItem('user_id',result.id) 
-					window.location = `/users/${result.id}`
+					setLocalStorage(result.user)
 				}).catch(error => {
-					const $errorMessage = $('#errorMessage')
-					$errorMessage.text(error.responseJSON.message)
-					$errorMessage.show()
+					displayErrorMessage(error)
 				})
 		} else {
-			//user.type = "user"
 			signup(user)
 				.then(result => {
-					localStorage.setItem('user_id',result.id) 
-					window.location = `/users/${result.id}`
+					setLocalStorage(result.user)
 				}).catch(error => {
-					const $errorMessage = $('#errorMessage')
-					$errorMessage.text(error.responseJSON.message)
-					$errorMessage.show()
+					displayErrorMessage(error)
 				})
 		}
 
-	})
+	})	
 })
+
 
 function login(user) {
 	return $.post('/auth/login', user)
@@ -44,4 +38,21 @@ function login(user) {
 
 function signup(user) {
 	return $.post('/auth/signup', user)
+}
+
+function setLocalStorage(user) {
+	sessionStorage.setItem('user_id', user.id)
+	sessionStorage.setItem('user_name', user.name)
+	sessionStorage.setItem('user_type', user.type)
+	if (user.type == 'admin') {
+		window.location = `/buildings`
+	} else {
+		window.location = `/users/${user.id}`
+	}
+}
+
+function displayErrorMessage(error) {
+	const $errorMessage = $('#errorMessage')
+	$errorMessage.text(error.responseJSON.message)
+	$errorMessage.show()
 }

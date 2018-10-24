@@ -2,6 +2,7 @@ const express = require('express');
 const bcrypt = require('bcrypt-nodejs');
 const router = express.Router();
 const User = require('../db/user');
+//var session;
 
 router.get('/', (req, res) => {
 	res.json({
@@ -48,8 +49,24 @@ router.post('/signup', (req, res, next) => {
 									signed: true,
 									secure: isSecure
 								})
+								res.cookie('user_name', user.name, {
+									httpOnly: true,
+									signed: true,
+									secure: isSecure
+								})
+								res.cookie('user_type', user.type, {
+									httpOnly: true,
+									signed: true,
+									secure: isSecure
+								})
+								// session = req.session;
+								// session.user_id = user.id;
+								// session.user_name = user.name;
+								// session.user_type = user.type;
+								// session.save();
+
 								res.json({
-									id,
+									user,
 									message: 'it works'
 								})
 							})
@@ -82,8 +99,23 @@ router.post('/login', (req, res, next) => {
 								signed: true,
 								secure: isSecure
 							})
+							res.cookie('user_name', user.name, {
+								httpOnly: true,
+								signed: true,
+								secure: isSecure
+							})
+							res.cookie('user_type', user.type, {
+								httpOnly: true,
+								signed: true,
+								secure: isSecure
+							})
+							// session = req.session;
+							// session.user_id = user.id;
+							// session.user_name = user.name;
+							// session.user_type = user.type;
+							// session.save();
 							res.json({
-								id: user.id,
+								user,
 								message: 'Logged in!'
 							})
 						} else {
@@ -99,8 +131,37 @@ router.post('/login', (req, res, next) => {
 	}
 })
 
+router.post('/newsletter', (req, res, next) => {
+	const validEmail = typeof req.body.email == 'string' && req.body.email.trim() != '';
+
+	if (validEmail) {
+		User
+			.getOneByEmail(req.body.email)
+			.then(user => {
+				//If user not found
+				if (!user) {
+					// Insert The user in the DB
+					//User
+						//.create(user).then(id => {
+							res.json({
+								user,
+								message: 'it works'
+							})
+						//})
+				} else {
+					next(new Error('This email is already registered!'))
+				}
+			})
+	} else {
+		next(new Error('Invalid Email'))
+	}
+})
+
+
 router.get('/logout', (req, res) => {
 	res.clearCookie('user_id')
+	res.clearCookie('user_name')
+	res.clearCookie('user_type')
 	res.json({
 		message: 'Logged out'
 	})
