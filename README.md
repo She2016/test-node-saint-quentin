@@ -10,6 +10,8 @@
   to install all the project dependencies.
 5. Open the browser on `http://localhost:3000/` thats it!
 
-## Folders structure:
-
-
+## Folders structur
+ 1. auth folder contains two files
+    - `index.js` contains forms routes:
+      - SignUp : verify if the user name and email are valid, verify the email is unique, then hash the password and create the user in the database, and save its information in the cookies.
+      - Login : verify if the user name and email are valid, verify the credentials correct , then save its information in the cookies. 
