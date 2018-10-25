@@ -157,6 +157,29 @@ router.post('/newsletter', (req, res, next) => {
 	}
 })
 
+router.post('/suggest', (req, res, next) => {
+	const validTitle = typeof req.body.title == 'string' && req.body.title.trim() != '';
+
+	if (validTitle) {
+		User
+			.getOne(req.signedCookies.user_id)
+			.then(user => {
+				//If user not found
+				if (user) {
+					res.json({
+						user: req.signedCookies.user_name,
+						title : req.body.title,
+						message: req.body.message
+					})
+				} else {
+					next(new Error('You have to sign in!'))
+				}
+			})		
+	} else {
+		next(new Error('Invalid Email'))
+	}
+})
+
 
 router.get('/logout', (req, res) => {
 	res.clearCookie('user_id')

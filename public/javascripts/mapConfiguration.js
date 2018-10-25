@@ -209,7 +209,7 @@ $('#newsletter').submit((event) => {
 		$successMessage.show()
 		$('#newsemail').val('')
 	}).catch(error => {
-		const $errorMessage = $('#successMessage')
+		const $errorMessage = $('#errorMessage')
 		$errorMessage.text(error.responseJSON.message)
 		$errorMessage.show()
 	})
@@ -218,4 +218,31 @@ $('#newsletter').submit((event) => {
 
 function newsletter(user) {
 	return $.post('/auth/newsletter', user)
+}
+
+
+$('#suggestion').submit((event) => {
+	event.preventDefault()
+	const title = $('#title').val()
+	const message = $('#message').val()
+	const suggestion = {
+		title,
+		message
+	}
+	suggest(suggestion).then((result) => {
+		console.log(result)
+		const $successMessage = $('#successMessage')
+		$successMessage.text('You suggestion submitted successfully!')
+		$successMessage.show()
+		$('#newsemail').val('')
+	}).catch(error => {
+		const $errorMessage = $('#errorMessage')
+		$errorMessage.text(error.responseJSON.message)
+		$errorMessage.show()
+	})
+
+})
+
+function suggest(suggestion) {
+	return $.post('/auth/suggest', suggestion)
 }

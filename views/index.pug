@@ -168,7 +168,7 @@ block content
           strong Oh Error!
         p
           | Subscribe our newsletter to receive the latest news and exclusive offers every week. No spam.
-        form.form-inline(id='newsletter')
+        form#newsletter.form-inline
           .form-group.mb-2
             label.sr-only(for='staticEmail2') Email
             input#staticEmail2.form-control-plaintext(type='text' readonly='' value='Please enter youe email')
@@ -188,13 +188,13 @@ block content
           strong Oh Error!
         p
           | Please let us know if you have any suggestions
-        form
+        form#suggestion
           .form-group
-            label(for='titleInput') Title
-            input#titleInput.form-control(type='text' placeholder='Title')
+            label(for='title') Title
+            input#title.form-control(type='text' placeholder='Title' required)
           .form-group
             label(for='message') Message
-            textarea#messageInput.form-control(rows='3')
+            textarea#message.form-control(rows='3')
           button.btn.btn-primary(type='submit') Submit
 
     
