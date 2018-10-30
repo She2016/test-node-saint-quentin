@@ -10,6 +10,7 @@ router.get('/', (req, res) => {
 	})
 })
 
+// Verify the user name, email, and password
 function validUser(user) {
 
 	const validName = typeof user.name == 'string' &&
@@ -23,6 +24,7 @@ function validUser(user) {
 	return validName && validEmail && validPassword
 }
 
+// When a user sign up
 router.post('/signup', (req, res, next) => {
 	if (validUser(req.body)) {
 		User
@@ -44,6 +46,7 @@ router.post('/signup', (req, res, next) => {
 						User
 							.create(user).then(id => {
 								const isSecure = req.app.get('env') != 'development'
+								// Set cookies
 								res.cookie('user_id', user.id, {
 									httpOnly: true,
 									signed: true,
@@ -59,11 +62,6 @@ router.post('/signup', (req, res, next) => {
 									signed: true,
 									secure: isSecure
 								})
-								// session = req.session;
-								// session.user_id = user.id;
-								// session.user_name = user.name;
-								// session.user_type = user.type;
-								// session.save();
 
 								res.json({
 									user,
@@ -81,6 +79,7 @@ router.post('/signup', (req, res, next) => {
 
 })
 
+// When user login
 router.post('/login', (req, res, next) => {
 	if (validUser(req.body)) {
 		// Check to see if user in DB
@@ -109,11 +108,6 @@ router.post('/login', (req, res, next) => {
 								signed: true,
 								secure: isSecure
 							})
-							// session = req.session;
-							// session.user_id = user.id;
-							// session.user_name = user.name;
-							// session.user_type = user.type;
-							// session.save();
 							res.json({
 								user,
 								message: 'Logged in!'
@@ -131,6 +125,7 @@ router.post('/login', (req, res, next) => {
 	}
 })
 
+// When a user egister in the newsletter
 router.post('/newsletter', (req, res, next) => {
 	const validEmail = typeof req.body.email == 'string' && req.body.email.trim() != '';
 
@@ -157,6 +152,7 @@ router.post('/newsletter', (req, res, next) => {
 	}
 })
 
+// When a registerd user sends a suggestion
 router.post('/suggest', (req, res, next) => {
 	const validTitle = typeof req.body.title == 'string' && req.body.title.trim() != '';
 
@@ -180,7 +176,7 @@ router.post('/suggest', (req, res, next) => {
 	}
 })
 
-
+// When a user logout
 router.get('/logout', (req, res) => {
 	res.clearCookie('user_id')
 	res.clearCookie('user_name')

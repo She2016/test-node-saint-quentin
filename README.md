@@ -10,8 +10,20 @@
   to install all the project dependencies.
 5. Open the browser on `http://localhost:3000/` thats it!
 
+## Technologies used
+1. [Node.js](https://nodejs.org/en/)
+2. [Pug](https://pugjs.org/api/getting-started.html)
+3. [PostgreSQL](https://www.postgresql.org/)
+4. [leaflet.js](https://leafletjs.com/)
+5. [JQuery](https://jquery.com/)
+6. [knex.js](https://knexjs.org/)
+
+
 ## Folders structur
  1. auth folder contains two files
     - `index.js` contains forms routes:
-      - SignUp : verify if the user name and email are valid, verify the email is unique, then hash the password and create the user in the database, and save its information in the cookies.
-      - Login : verify if the user name and email are valid, verify the credentials correct , then save its information in the cookies. 
+      - SignUp, Login, Logout, Newsletter, Suggestions
+    - `middleware.js` contains three functions:
+      - ensureLogin
+      - allowAccess
+      - allowAdmins
