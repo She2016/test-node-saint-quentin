@@ -217,10 +217,10 @@ $('#newsletter').submit((event) => {
 })
 
 function newsletter(user) {
-	return $.post('/auth/newsletter', user)
+	return $.post('/auth/newsletter', user) // Sending a post request to register the email of a user
 }
 
-
+// Submit suggestion form
 $('#suggestion').submit((event) => {
 	event.preventDefault()
 	const title = $('#title').val()
@@ -229,6 +229,7 @@ $('#suggestion').submit((event) => {
 		title,
 		message
 	}
+
 	suggest(suggestion).then((result) => {
 		console.log(result)
 		const $successMessage = $('#successMessage')
@@ -244,5 +245,5 @@ $('#suggestion').submit((event) => {
 })
 
 function suggest(suggestion) {
-	return $.post('/auth/suggest', suggestion)
+	return $.post('/auth/suggest', suggestion) // Sending a post request to register the suggestion of a user
 }

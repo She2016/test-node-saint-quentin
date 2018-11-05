@@ -15,7 +15,7 @@ $(() => {
 			email,
 			password
 		}
-
+		// If the submitted form is login
 		if (formType == 'login') {
 			login(user)
 				.then(result => {
@@ -24,6 +24,7 @@ $(() => {
 					displayErrorMessage(error)
 				})
 		} else {
+			// If the submitted form is signup
 			signup(user)
 				.then(result => {
 					setLocalStorage(result.user)
@@ -37,14 +38,14 @@ $(() => {
 
 
 function login(user) {
-	return $.post('/auth/login', user)
+	return $.post('/auth/login', user) // send a post AJAX request to the server with a user info
 }
 
 function signup(user) {
-	return $.post('/auth/signup', user)
+	return $.post('/auth/signup', user) // send a post AJAX request to the server with a user info
 }
 
-function setLocalStorage(user) {
+function setLocalStorage(user) { // Set session variables
 	sessionStorage.setItem('user_id', user.id)
 	sessionStorage.setItem('user_name', user.name)
 	sessionStorage.setItem('user_type', user.type)
@@ -55,6 +56,7 @@ function setLocalStorage(user) {
 	}
 }
 
+//Displaying error messages
 function displayErrorMessage(error) {
 	const $errorMessage = $('#errorMessage')
 	$errorMessage.text(error.responseJSON.message)
