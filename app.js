@@ -2,7 +2,8 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
-//var session = require('express-session');
+var session = require('express-session');
+var flash = require('connect-flash');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
@@ -23,7 +24,21 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser('keyboard_cat'));
+app.use(session({
+  secret: 'djhxcvxfgshajfgjhgsjhfgsakjeauytsdfy',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { maxAge: 60000 }
+  }));
+app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// send errors to page if any.
+app.use(function(req, res, next){
+  res.locals.success_messages = req.flash('success_messages');
+  res.locals.error_messages = req.flash('error_messages');
+  next();
+});
 
 app.use('/auth', auth);
 app.use('/', indexRouter); // localhost:3000 --> All users have access

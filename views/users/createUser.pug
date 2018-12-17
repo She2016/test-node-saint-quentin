@@ -1,0 +1,59 @@
+extends ../templates/layout
+block content
+  .content.mt-3
+    .animated.fadeIn
+      .card
+        .card-header
+          strong Creation un utilisateur
+        .card-body.card-block
+          form.needs-validation(action='/users/create' method='post' novalidate='')
+            .form-row
+              .col-md-6.mb-3
+                label.form-control-label(for='name') Nom
+                input#name.form-control(type='text' name='name' placeholder='Entree le nom' required='')
+                .invalid-feedback
+                  | Please provide a name.
+              .col-md-6.mb-3
+                label.form-control-label(for='email') Email
+                input#email.form-control(type='email' name='email' placeholder='Entree un mail' required='')
+                .invalid-feedback
+                  | Please choose a valid email.
+            .form-row
+              .col-md-6.mb-3
+                label.form-control-label(for='password') Password
+                input#password.form-control(type='password' name='password' placeholder='Entree le password' required='')
+                .invalid-feedback
+                  | Please provide a password.
+              .col-md-6.mb-3
+                label.form-control-label(for='email') Type
+                select#type.form-control(name='type' required='')
+                  each key in jsonData
+                    option #{key.type_name}
+                .invalid-feedback
+                  | Please choose a valid type.
+            .d-flex
+              button.btn.btn-primary.btn-sm.mx-2(type='submit')
+                i.fa.fa-dot-circle-o
+                |  Submit
+              button.btn.btn-danger.btn-sm(type='reset')
+                i.fa.fa-ban
+                |  Reset
+              button.btn.btn-secondary.ml-auto(type='button' onclick="window.location='/events'") Cancel
+  script.
+    (function () {
+      'use strict';
+      window.addEventListener('load', function () {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function (form) {
+          form.addEventListener('submit', function (event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();

@@ -8,6 +8,10 @@ block content
             .card-header
               strong.card-title All Users
             .card-body
+              -if (success_messages != '')
+                #errorMessage.alert.alert-success(role='alert') #{success_messages}
+              -if (error_messages != '')
+                #errorMessage.alert.alert-danger(role='alert') #{error_messages}
               table#bootstrap-data-table.table.table-striped.table-bordered
                 thead
                   tr
@@ -24,8 +28,14 @@ block content
                       td !{key.email}
                       td !{key.type}
                       td 
-                        a.btn-outline-success(href='/edit')
-                          i.fa.fa-edit
+                        .d-flex.justify-content-around
+                          div
+                            a(href=`/users/edit/${key.id}`)
+                              i.fa.fa-edit
+                          div
+                            a(href=`/users/delete/${key.id}` onclick="return confirm('Are you sure you want to delete this item?');")
+                              i.fa.fa-trash
+
   script.
     //- $(document).ready(function() {
     //-   var url = document.URL;
