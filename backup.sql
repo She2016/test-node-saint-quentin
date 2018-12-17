@@ -284,6 +284,115 @@ ALTER SEQUENCE public.building_type_id_seq OWNED BY public.building_type.id;
 SET default_with_oids = false;
 
 --
+-- Name: knex_migrations; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.knex_migrations (
+    id integer NOT NULL,
+    name character varying(255),
+    batch integer,
+    migration_time timestamp with time zone
+);
+
+
+ALTER TABLE public.knex_migrations OWNER TO postgres;
+
+--
+-- Name: knex_migrations_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.knex_migrations_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.knex_migrations_id_seq OWNER TO postgres;
+
+--
+-- Name: knex_migrations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.knex_migrations_id_seq OWNED BY public.knex_migrations.id;
+
+
+--
+-- Name: knex_migrations_lock; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.knex_migrations_lock (
+    index integer NOT NULL,
+    is_locked integer
+);
+
+
+ALTER TABLE public.knex_migrations_lock OWNER TO postgres;
+
+--
+-- Name: knex_migrations_lock_index_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.knex_migrations_lock_index_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.knex_migrations_lock_index_seq OWNER TO postgres;
+
+--
+-- Name: knex_migrations_lock_index_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.knex_migrations_lock_index_seq OWNED BY public.knex_migrations_lock.index;
+
+
+--
+-- Name: messages; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.messages (
+    id integer NOT NULL,
+    title character varying(255) NOT NULL,
+    message character varying(255) NOT NULL,
+    sender_id bigint,
+    receiver_id bigint,
+    created_at timestamp with time zone,
+    updated_at timestamp with time zone
+);
+
+
+ALTER TABLE public.messages OWNER TO postgres;
+
+--
+-- Name: messages_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.messages_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.messages_id_seq OWNER TO postgres;
+
+--
+-- Name: messages_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.messages_id_seq OWNED BY public.messages.id;
+
+
+--
 -- Name: user_types; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -335,6 +444,27 @@ ALTER SEQUENCE public.users_id_seq OWNED BY public.users.id;
 --
 
 ALTER TABLE ONLY public.building_type ALTER COLUMN id SET DEFAULT nextval('public.building_type_id_seq'::regclass);
+
+
+--
+-- Name: knex_migrations id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.knex_migrations ALTER COLUMN id SET DEFAULT nextval('public.knex_migrations_id_seq'::regclass);
+
+
+--
+-- Name: knex_migrations_lock index; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.knex_migrations_lock ALTER COLUMN index SET DEFAULT nextval('public.knex_migrations_lock_index_seq'::regclass);
+
+
+--
+-- Name: messages id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.messages ALTER COLUMN id SET DEFAULT nextval('public.messages_id_seq'::regclass);
 
 
 --
@@ -394,6 +524,32 @@ COPY public.building_type (id, name, comments) FROM stdin;
 
 
 --
+-- Data for Name: knex_migrations; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.knex_migrations (id, name, batch, migration_time) FROM stdin;
+1	20181029122036_messages.js	1	2018-10-29 14:51:35.598+01
+\.
+
+
+--
+-- Data for Name: knex_migrations_lock; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.knex_migrations_lock (index, is_locked) FROM stdin;
+1	0
+\.
+
+
+--
+-- Data for Name: messages; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.messages (id, title, message, sender_id, receiver_id, created_at, updated_at) FROM stdin;
+\.
+
+
+--
 -- Data for Name: pointcloud_formats; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -424,10 +580,8 @@ user
 --
 
 COPY public.users (id, name, email, password, type) FROM stdin;
-1	Sheyar	sheyar@gamil.com	123456	admin
-3	Jamil	jamil@gamil.com	$2a$10$cmfIla27yqdm2dn1xD3dQ.31EjQ8ZqpV/3LmFCYdEK81XdTzBMHFG	\N
-4	you	you@gamil.com	$2a$10$G.aCuHtESvLa/lVpI63tYOxfwxymZul.VRqfR7.cbk7KSw8qc8GGi	user
-5	Four	for@gamil.com	$2a$10$LHa59gnc0B83eA8Y8MQnmOJoK5ScukHJVumpQpky06TdIlw1RzI/2	user
+6	Sheyar	sheyar@gmail.com	$2a$10$PsoveFZPWZhcRc/KsGUDHOcBrbBmnzhBRzmENoPQEVpAG.SeQwKwi	admin
+3	Jamil	jamil@gamil.com	$2a$10$cmfIla27yqdm2dn1xD3dQ.31EjQ8ZqpV/3LmFCYdEK81XdTzBMHFG	user
 \.
 
 
@@ -487,10 +641,31 @@ SELECT pg_catalog.setval('public.building_type_id_seq', 1, false);
 
 
 --
+-- Name: knex_migrations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.knex_migrations_id_seq', 1, true);
+
+
+--
+-- Name: knex_migrations_lock_index_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.knex_migrations_lock_index_seq', 1, true);
+
+
+--
+-- Name: messages_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.messages_id_seq', 1, false);
+
+
+--
 -- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.users_id_seq', 5, true);
+SELECT pg_catalog.setval('public.users_id_seq', 6, true);
 
 
 --
@@ -507,6 +682,30 @@ ALTER TABLE ONLY public.building
 
 ALTER TABLE ONLY public.building_type
     ADD CONSTRAINT building_type_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: knex_migrations_lock knex_migrations_lock_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.knex_migrations_lock
+    ADD CONSTRAINT knex_migrations_lock_pkey PRIMARY KEY (index);
+
+
+--
+-- Name: knex_migrations knex_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.knex_migrations
+    ADD CONSTRAINT knex_migrations_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: messages messages_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.messages
+    ADD CONSTRAINT messages_pkey PRIMARY KEY (id);
 
 
 --
@@ -533,11 +732,41 @@ CREATE INDEX building_gist ON public.building USING gist (geom);
 
 
 --
+-- Name: messages_receiver_id_index; Type: INDEX; Schema: public; Owner: postgres
+--
+
+CREATE INDEX messages_receiver_id_index ON public.messages USING btree (receiver_id);
+
+
+--
+-- Name: messages_sender_id_index; Type: INDEX; Schema: public; Owner: postgres
+--
+
+CREATE INDEX messages_sender_id_index ON public.messages USING btree (sender_id);
+
+
+--
 -- Name: users fk_user_type; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.users
     ADD CONSTRAINT fk_user_type FOREIGN KEY (type) REFERENCES public.user_types(type_name);
+
+
+--
+-- Name: messages messages_receiver_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.messages
+    ADD CONSTRAINT messages_receiver_id_foreign FOREIGN KEY (receiver_id) REFERENCES public.users(id);
+
+
+--
+-- Name: messages messages_sender_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.messages
+    ADD CONSTRAINT messages_sender_id_foreign FOREIGN KEY (sender_id) REFERENCES public.users(id);
 
 
 --

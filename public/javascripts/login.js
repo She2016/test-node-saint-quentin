@@ -33,7 +33,7 @@ $(() => {
 				})
 		}
 
-	})	
+	})
 })
 
 
@@ -62,3 +62,4 @@ function displayErrorMessage(error) {
 	$errorMessage.text(error.responseJSON.message)
 	$errorMessage.show()
 }
+

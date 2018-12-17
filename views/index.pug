@@ -131,51 +131,35 @@ block content
     .row  
       .col-lg-6
         h3.text-center
-          a(target='_blank' href='#' data-toggle='modal' data-target='#virtuelle') Visite virtuelle
+          a(target='_blank' href='#' data-toggle='modal' data-target='#virtuelle' style='color: #000 !important') Visite virtuelle
         a(target='_blank' href='#' data-toggle='modal' data-target='#virtuelle')
           img.images(src='images/model.png')
       .col-lg-6
         h5.text-center
-          a(target='_blank' href='#' data-toggle='modal' data-target='#catalogue') Programmation et Evenement
+          a(target='_blank' href='#' data-toggle='modal' data-target='#catalogue' style='color: #000') Programmation et Evenement
         a(target='_blank' href='#' data-toggle='modal' data-target='#catalogue')
           img.images(src='images/Catalogue.png')
-    hr
-    .row
-      .col-lg-12
-        .modal-header
-          h4 Join Our Newsletter
-        .modal-body
-          p
-            | Subscribe our newsletter to receive the latest news and exclusive offers every week. No spam.
-          form.form-inline(action='#' method='post')
-            .form-group.mb-2
-              label.sr-only(for='staticEmail2') Email
-              input#staticEmail2.form-control-plaintext(type='text' readonly='' value='Please enter youe email')
-            .form-group.mx-sm-3.mb-2
-              label.sr-only(for='inputPassword2') Email
-              input#inputPassword2.form-control(type='text' placeholder='Email')
-            button.btn.btn-primary.mb-2(type='submit') Confirm
 
 
   script#newsletter(type='text/template')   
     .col-lg-12
       .modal-header
-        h4 Join Our Newsletter
+        h4 Rejoindre notre Newsletter
       .modal-body
         .alert.alert-success(role='alert' id='successMessage' style='display:none')
           strong Oh Success!
         .alert.alert-danger(role='alert' id='errorMessage' style='display:none')
           strong Oh Error!
         p
-          | Subscribe our newsletter to receive the latest news and exclusive offers every week. No spam.
+          | Abonnez-vous à notre newsletter pour recevoir chaque semaine les dernières nouvelles et des offres exclusives.
         form#newsletter.form-inline
           .form-group.mb-2
             label.sr-only(for='staticEmail2') Email
-            input#staticEmail2.form-control-plaintext(type='text' readonly='' value='Please enter youe email')
+            input#staticEmail2.form-control-plaintext(type='text' readonly='' value='Veuillez entrer votre e-mail')
           .form-group.mx-sm-3.mb-2
-            label.sr-only(for='inputPassword2') Email
+            label.sr-only(for='inputPassword2') E-mail
             input#newsemail.form-control(type='email' placeholder='Email' required)
-          button.btn.btn-primary.mb-2(type='submit') Confirm
+          button.btn.btn-primary.mb-2(type='submit') Confirmer
 
   script#suggestions(type='text/template') 
     .col-lg-12
@@ -187,15 +171,15 @@ block content
         .alert.alert-danger(role='alert' id='errorMessage' style='display:none')
           strong Oh Error!
         p
-          | Please let us know if you have any suggestions
+          | Faites nous part de vos suggestions
         form#suggestion
           .form-group
-            label(for='title') Title
+            label(for='title') Titre
             input#title.form-control(type='text' placeholder='Title' required)
           .form-group
             label(for='message') Message
             textarea#message.form-control(rows='3')
-          button.btn.btn-primary(type='submit') Submit
+          button.btn.btn-primary(type='submit') Soumettre
 
     
 
