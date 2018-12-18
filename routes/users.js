@@ -12,7 +12,7 @@ function isValidId(req, res, next) {
 /* GET events page. */
 router.get('/', function (req, res, next) {
   Users.getAllUsers().then(function (data) {
-      res.render('all_Users', {
+      res.render('allUsers', {
         title: "All Users",
         message: req.flash('success_messages'),
         
