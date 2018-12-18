@@ -5,16 +5,18 @@
 3. Import backup.sql file which existes in the root of the project to postgresql.
 4. From the command line enter the directory of the project and run
 
-  > npm install 
-  
-  to install all the project dependencies.
-5. From the terminal run 
+> npm install
 
-  > node start
-  
+to install all the project dependencies.
+
+5. From the terminal run
+
+> node start
+
 6. Open the browser on `http://localhost:3000/` thats it! The port number can be modified from the file `bin/www`.
 
 ## Technologies used
+
 1. [Node.js](https://nodejs.org/en/)
 2. [Pug](https://pugjs.org/api/getting-started.html)
 3. [PostgreSQL](https://www.postgresql.org/)
@@ -22,28 +24,32 @@
 5. [JQuery](https://jquery.com/)
 6. [knex.js](https://knexjs.org/)
 
-
 ## Folders structur
-  1. auth folder contains two files:
-    - `index.js` contains forms routes:
-      - SignUp, Login, Logout, Newsletter, Suggestions.
-    - `middleware.js` contains three functions:
-      - ensureLogin : to ensure that a user logged in.
-      - allowAccess : verify if a user has a permission to access.
-      - allowAdmins : verify if the user has admin permissions.
 
-  2. db folder contains three files:
-    - `connection.js`which setup the connection with the database.
-    - `building.js` and `user.js` contains functions to retrive data from the database.
+1. auth folder contains two files:
 
-  3. public folder contains all the front-end assets which are used in the application such as images, css, js, etc.
-      in javascripts folder there is:
-    - `login.js` file, contains the submission of login, signup and setting session variables.
-    - `mapConfiguration.js` file is embedded in the index page (home page) in views folder contains all the map settings such as adding layers, configuring zoom level, etc.
+   - `index.js` contains forms routes:
+    	- SignUp, Login, Logout, Newsletter, Suggestions.
+   - `middleware.js` contains three functions:
+    	- ensureLogin : to ensure that a user logged in.
+    	- allowAccess : verify if a user has a permission to access.
+    	- allowAdmins : verify if the user has admin permissions.
 
-  4. routes folder contains all the application routers:
-    - `index.js` contains all basic routes. Ex: http://localhost:3000/
-    - `buildings.js` contains all the routes concerning the buildings. Ex: http://localhost:3000/building/
-    - `users.js` contains all the routes concerning the users. Ex: http://localhost:3000/users/
+2. db folder contains three files:
 
-  5. views folder contains all view pages
+   - `connection.js`which setup the connection with the database.
+   - `building.js` and `user.js` contains functions to retrive data from the database.
+
+3. public folder contains all the front-end assets which are used in the application such as images, css, js, etc.
+   in javascripts folder there is:
+
+   - `login.js` file, contains the submission of login, signup and setting session variables.
+   - `mapConfiguration.js` file is embedded in the index page (home page) in views folder contains all the map settings such as adding layers, configuring zoom level, etc.
+
+4. routes folder contains all the application routers:
+
+   - `index.js` contains all basic routes. Ex: http://localhost:3000/
+   - `buildings.js` contains all the routes concerning the buildings. Ex: http://localhost:3000/building/
+   - `users.js` contains all the routes concerning the users. Ex: http://localhost:3000/users/
+
+5. views folder contains all view pages
