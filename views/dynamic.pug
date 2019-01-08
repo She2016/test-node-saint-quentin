@@ -158,7 +158,8 @@ block content
     }
 
     function averages() {
-      var ure = `http://localhost/saint_quentin/api/averages`;
+      //var ure = `http://localhost/saint_quentin/api/averages`;
+      var ure = `http://192.168.103.2/admin/api/averages`;
       $.ajax({
         url: ure,
         type: "GET",
@@ -175,7 +176,8 @@ block content
     }
 
     function averages_hestoric() {
-      var ure = `http://localhost/saint_quentin/api/averages_hestoric`;
+      //var ure = `http://localhost/saint_quentin/api/averages_hestoric`;
+      var ure = `http://192.168.103.2/admin/api/averages_hestoric`;
       $.ajax({
         url: ure,
         type: "GET",
@@ -209,7 +211,8 @@ block content
         $('#charts').show();
         $('#averags').hide();
         var id = parseInt($(this).attr("name"));
-        var url = `http://localhost/saint_quentin/api/chart/${id}`;
+        //var url = `http://localhost/saint_quentin/api/chart/${id}`;
+        var url = `http://192.168.103.2/admin/api/chart/${id}`;
         $.ajax({
           url: url,
           type: "GET",

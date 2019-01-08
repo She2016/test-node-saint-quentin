@@ -53,3 +53,19 @@ to install all the project dependencies.
    - `users.js` contains all the routes concerning the users. Ex: http://localhost:3000/users/
 
 5. views folder contains all view pages
+   - `templates` folder contains `layout.pug` which is the master page for the tha admin panel, and `layoutt.pug` which is the master page for the user interface.
+   - `buildings` folders contains all the pages which are realted to the buildings, and so on.
+
+
+6. `app.js` is the heart of the application, here we do the following things:
+	- Import all used packages in the application.
+	- Import and set the routes for the app.
+	- Set the view file for the app.
+	- Set the public folder as the container of the front-end files such as css, js, etc.
+
+7. `knexfile.js` set the connection with the postgreSQL database.
+
+8. `package.json` contias all the dependencies which are used in this application.
+
+9. Migrations allow to define sets of schema changes so upgrading a database is a breeze for details [Migrations](https://knexjs.org/#Migrations).
+
